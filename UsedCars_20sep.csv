@@ -1,0 +1,500 @@
+Model,Prices,Depreciation,Reg Date,Eng Cap,Mileage,Vehicle Type
+Nissan Sylphy 1.6A,"$38,000","$13,850 /yr",26-Nov-2015,"1,598 cc","78,000 km",Sedan
+BMW X1 sDrive18i,"$132,888","$18,980 /yr",29-Aug-2019,"1,499 cc","49,000 km",SUV
+Audi Q3 1.4A TFSI S-tronic,"$143,800","$20,960 /yr",14-Nov-2019,"1,395 cc","19,800 km",SUV
+Nissan NV200 1.5M,"$34,800","$12,690 /yr",28-Jun-2016,"1,461 cc",-,Van
+Honda HR-V 1.5A LX,"$99,900","$14,850 /yr",03-Sep-2019,"1,496 cc","65,331 km",SUV
+Mercedes-Benz C-Class C200 Coupe AMG Line,"$112,800","$31,640 /yr",15-Jul-2016,"1,991 cc","85,000 km",Sports
+Bentley Bentayga EWB 4.0A V8 Azure,"$1,290,000","$104,570 /yr",23-Feb-2023,"3,996 cc","2,000 km",SUV
+Toyota Hiace Commuter 3.0A,"$68,800","$26,130 /yr",19-May-2016,"2,982 cc",-,Bus
+Toyota Crown MS65 (COE till 12/2029),"$39,800","$6,390 /yr",23-Dec-2019,"2,563 cc",-,Luxury
+Honda Civic 1.6A VTi,"$83,800","$15,930 /yr",22-May-2018,"1,597 cc","83,000 km",Sedan
+Toyota Vellfire 2.5A Elegance Moonroof,"$175,800","$29,730 /yr",28-Aug-2018,"2,494 cc","83,950 km",MPV
+Peugeot 3008 Diesel 1.6A e-HDi ETG,"$30,800","$11,820 /yr",15-Oct-2015,"1,560 cc","132,000 km",SUV
+Mercedes-Benz Citan 109 CDI Van Extra-Long 2 Seaters,"$23,800","$14,750 /yr",12-May-2015,"1,461 cc","80,552 km",Van
+Mazda 5 2.0A SP Sunroof,"$56,000","$16,460 /yr",15-Jul-2016,"1,998 cc","89,000 km",MPV
+Honda HR-V 1.5A LX (OPC),"$49,800","$13,750 /yr",06-Sep-2016,"1,496 cc","46,000 km",SUV
+MINI Cooper S 1.6A Sunroof (New 5-yr COE),"$73,800","$14,740 /yr",30-Aug-2013,"1,598 cc","139,928 km",Sports
+Mercedes-Benz CLA-Class CLA200 (New 10-yr COE),"$128,800","$12,870 /yr",07-Oct-2013,"1,595 cc","109,000 km",Luxury
+Honda Civic 1.6A VTi,"$86,900","$16,040 /yr",12-Jul-2018,"1,597 cc","37,800 km",Sedan
+Nissan NV350 Caravan 2.0A DX,"$84,800","$9,420 /yr",29-Sep-2022,"1,998 cc",-,Van
+Volkswagen Jetta GP 1.4A TSI,"$50,800","$13,050 /yr",20-Dec-2016,"1,390 cc","126,720 km",Sedan
+Hyundai Elantra 1.6A GLS S,"$60,800","$13,820 /yr",08-Sep-2017,"1,591 cc","80,000 km",Sedan
+Audi TT Coupe 1.8T (COE till 08/2030),"$48,888","$7,060 /yr",01-Nov-2000,"1,781 cc","79,000 km",Sports
+Honda Civic 1.6A VTi (COE till 12/2027),"$52,800","$12,410 /yr",17-Jan-2008,"1,595 cc",-,Sedan
+Toyota Estima 2.4A Aeras,"$42,500","$25,920 /yr",18-Sep-2014,"2,362 cc","82,248 km",MPV
+Jaguar F-Type 3.0SC S ST2 Convertible (New 10-yr COE),"$223,888","$22,370 /yr",27-Jun-2013,"2,995 cc","58,500 km",Sports
+Hyundai Elantra 1.6A GLS,"$70,800","$13,630 /yr",29-Jun-2018,"1,591 cc","88,900 km",Sedan
+Peugeot 308 1.2A PureTech Allure Glass Roof,"$67,800","$12,990 /yr",06-Feb-2018,"1,199 cc","86,329 km",Hatchback
+Audi TT Coupe 2.0A TFSI S-tronic (COE till 11/2029),"$96,800","$15,680 /yr",23-Dec-2009,"1,984 cc","128,000 km",Sports
+Mercedes-Benz B-Class B180 Style,"$38,800","$14,820 /yr",11-Aug-2015,"1,595 cc","152,000 km",Hatchback
+Toyota Wish 1.8A,"$80,800","$17,560 /yr",12-Oct-2017,"1,798 cc","108,308 km",MPV
+Audi Q2 1.0A TFSI S-tronic,"$97,500","$17,870 /yr",11-May-2018,999 cc,"71,000 km",SUV
+Mercedes-Benz V-Class V250d Avantgarde LWB,"$165,000","$32,630 /yr",27-Apr-2017,"2,143 cc","123,000 km",MPV
+Honda Odyssey 2.4A EXV-S Sunroof,"$41,800","$22,520 /yr",04-Dec-2014,"2,356 cc","30,228 km",MPV
+Hyundai Avante 1.6A S (COE till 09/2024),"$11,800","$11,770 /yr",16-Oct-2009,"1,591 cc",-,Sedan
+BMW 3 Series 316i M-Sport (New 5-yr COE),"$79,888","$15,960 /yr",25-Nov-2013,"1,598 cc","66,168 km",Luxury
+Volkswagen Golf 1.4A TSI Comfortline,"$97,800","$14,270 /yr",27-Nov-2019,"1,395 cc",-,Hatchback
+Honda Jazz 1.3A,"$74,800","$13,270 /yr",27-Feb-2019,"1,318 cc","29,200 km",Hatchback
+Mitsubishi Outlander 2.4A,"$44,800","$21,520 /yr",26-Jun-2015,"2,360 cc","110,000 km",SUV
+Kia Cerato K3 1.6A SX,"$23,800","$14,060 /yr",26-Dec-2014,"1,591 cc","105,399 km",Sedan
+Mercedes-Benz C-Class C180 CGI (COE till 09/2028),"$83,800","$16,740 /yr",22-Oct-2013,"1,595 cc","58,000 km",Luxury
+Toyota Previa 2.4A (COE till 04/2031),"$103,800","$13,680 /yr",09-Dec-2011,"2,362 cc","138,650 km",MPV
+Mercedes-Benz CLA-Class CLA180,"$50,800","$19,760 /yr",27-Aug-2015,"1,595 cc","92,000 km",Luxury
+Lexus ES250 Executive Sunroof,"$70,800","$21,140 /yr",01-Feb-2016,"2,494 cc","83,000 km",Luxury
+Kia Sorento Diesel 2.2A CRDi Sunroof,"$128,888","$18,470 /yr",17-Oct-2019,"2,199 cc","58,138 km",SUV
+Mercedes-Benz A-Class A180 Sunroof,"$31,800","$28,160 /yr",07-Aug-2014,"1,595 cc",-,Hatchback
+BMW 1 Series 116i,"$69,888",N.A,17-Oct-2013,"1,598 cc","128,688 km",Hatchback
+Mazda 3 1.5A Sunroof,"$52,800","$12,870 /yr",21-Jun-2017,"1,496 cc","92,651 km",Sedan
+Mercedes-Benz E-Class E200,"$46,800","$20,150 /yr",03-Nov-2014,"1,991 cc",-,Luxury
+MINI Cooper S Clubman 2.0A,"$121,888","$19,850 /yr",26-Oct-2018,"1,998 cc","48,000 km",Hatchback
+BMW 6 Series 640i Gran Coupe M-Sport Sunroof,"$148,888","$28,540 /yr",27-Mar-2017,"2,979 cc","98,000 km",Luxury
+Honda Odyssey 2.4A EXV-S Sunroof,"$41,988","$21,440 /yr",06-Jan-2015,"2,356 cc","86,000 km",MPV
+Volvo XC60 T5 Momentum,"$168,888","$22,760 /yr",26-Feb-2020,"1,969 cc","96,000 km",SUV
+Audi A5 Sportback Mild Hybrid 2.0A TFSI S-tronic,"$206,388","$21,110 /yr",27-Jun-2022,"1,984 cc","24,000 km",Luxury
+Subaru Impreza 5D 1.6i-S Sunroof,"$65,800","$14,780 /yr",29-Sep-2017,"1,600 cc","75,000 km",Hatchback
+Honda City 1.5A SV,"$48,800","$13,840 /yr",27-Oct-2016,"1,497 cc","110,000 km",Sedan
+Mitsubishi Triton L200 Double-Cab 2.5M,"$55,800","$17,760 /yr",21-Nov-2016,"2,477 cc",-,Truck
+Jaguar E-PACE 2.0A Prestige,"$170,150","$20,430 /yr",30-Mar-2021,"1,997 cc","23,000 km",SUV
+Toyota Alphard Hybrid 2.5A SR C-Package Moonroof,"$348,800","$32,660 /yr",21-Apr-2023,"2,493 cc",50 km,MPV
+Mercedes-Benz E-Class E200 CGI Coupe (COE till 07/2030),"$89,900","$13,270 /yr",08-Jul-2010,"1,796 cc","118,000 km",Sports
+Honda Jazz Hybrid 1.5A e-HEV Luxe,"$121,800","$14,870 /yr",03-Aug-2021,"1,498 cc","26,000 km",Hatchback
+Nissan Sylphy 1.6A Premium,"$46,500","$14,170 /yr",08-Jun-2016,"1,598 cc",-,Sedan
+Toyota Wish 1.8A (COE till 06/2026),"$35,800","$13,010 /yr",28-Nov-2006,"1,794 cc","220,800 km",MPV
+Honda Vezel 1.5A X Honda Sensing,"$37,800","$14,860 /yr",29-Dec-2015,"1,496 cc","84,092 km",SUV
+Mitsubishi Fuso Super Great FP51,"$72,800",N.A,25-Oct-2016,"11,967 cc",-,Truck
+Audi A5 Sportback 2.0A TFSI S-tronic Design,"$105,888","$23,090 /yr",31-May-2017,"1,984 cc","72,500 km",Luxury
+Honda Civic 1.6A VTi,"$92,888","$15,600 /yr",23-Jan-2019,"1,597 cc","85,000 km",Sedan
+BMW X3 sDrive20i M-Sport,"$157,800","$23,230 /yr",23-May-2019,"1,998 cc","72,000 km",SUV
+BMW 7 Series 740Li,"$269,800","$32,450 /yr",30-Sep-2019,"2,998 cc","82,000 km",Luxury
+Toyota Noah Hybrid 1.8A X Toyota Safety Sense,"$137,800","$23,410 /yr",17-Dec-2018,"1,797 cc","59,000 km",MPV
+Toyota Harrier 2.0A Premium Panoramic Roof,"$85,888","$19,690 /yr",29-Mar-2017,"1,986 cc","115,012 km",SUV
+BMW 2 Series 216i Gran Tourer,"$85,800","$18,190 /yr",11-Aug-2017,"1,499 cc","71,586 km",MPV
+Porsche 911 Carrera S Coupe 3.8A PDK (COE till 06/2029),"$258,888","$45,320 /yr",16-Jun-2009,"3,800 cc","105,000 km",Sports
+Hyundai Elantra 1.6A GLS S,"$63,800","$13,510 /yr",11-Jan-2018,"1,591 cc","89,282 km",Sedan
+Honda Jazz 1.3A,"$80,800","$13,940 /yr",02-May-2019,"1,318 cc","68,200 km",Hatchback
+Audi A6 2.0A TFSI MU,"$41,800","$21,570 /yr",30-Sep-2014,"1,984 cc","100,000 km",Luxury
+BMW M135i 5DR,"$107,800","$29,480 /yr",22-Sep-2016,"2,979 cc","62,000 km",Sports
+Nissan Qashqai 2.0A,"$40,800","$20,290 /yr",18-May-2015,"1,997 cc","93,804 km",SUV
+Mitsubishi Lancer 1.6M (COE till 01/2029),"$58,800","$11,010 /yr",03-Feb-2009,"1,584 cc","136,339 km",Sedan
+Toyota Vellfire 3.5A Z Moonroof (COE till 03/2029),"$198,000","$31,910 /yr",13-Dec-2019,"3,456 cc","76,000 km",MPV
+Kia Carens Diesel 1.7A,"$69,800","$14,880 /yr",25-Aug-2017,"1,685 cc","110,083 km",MPV
+Toyota C-HR Hybrid 1.8A S,"$106,800","$16,240 /yr",06-Sep-2019,"1,797 cc","41,000 km",SUV
+BMW 1 Series 118i 5DR (COE till 10/2031),"$93,800","$11,590 /yr",09-Dec-2011,"1,598 cc",-,Hatchback
+BMW X3 sDrive20i M-Sport Sunroof,"$98,888","$23,680 /yr",06-Jan-2017,"1,997 cc","109,941 km",SUV
+Lexus ES250 Luxury Sunroof,"$188,800","$22,480 /yr",29-Oct-2020,"2,487 cc","45,000 km",Luxury
+Volkswagen Golf 1.4A TSI Comfortline,"$85,800","$14,420 /yr",31-Dec-2018,"1,395 cc","79,339 km",Hatchback
+Toyota Vios 1.5A E (COE till 05/2028),"$53,800","$11,650 /yr",13-May-2008,"1,497 cc","66,120 km",Sedan
+Hyundai Avante 1.6A S (COE till 09/2028),"$51,800","$10,500 /yr",04-Sep-2008,"1,591 cc",-,Sedan
+Audi A3 Sportback 1.0A TFSI S-tronic,"$99,800","$16,670 /yr",24-Jan-2019,999 cc,"44,000 km",Hatchback
+Mercedes-Benz E-Class E200,"$35,800",N.A,26-Feb-2014,"1,991 cc","188,000 km",Luxury
+Toyota Wish 1.8A X,"$69,100","$16,850 /yr",13-Apr-2017,"1,797 cc","65,000 km",MPV
+Nissan Cabstar 3.0M,"$30,800","$14,320 /yr",24-Nov-2015,"2,953 cc",-,Truck
+Honda Civic Type-R 2.0M (COE till 12/2027),"$99,800","$23,460 /yr",17-Jan-2008,"1,998 cc",-,Sports
+Mercedes-Benz G-Class G63 AMG 4MATIC Stronger Than Time Edition,"$750,000","$89,540 /yr",03-Aug-2020,"3,982 cc","28,000 km",SUV
+Mitsubishi Fuso Canter FEB21,"$39,800","$19,190 /yr",27-Oct-2015,"2,998 cc",-,Truck
+Honda Accord 2.0A (COE till 06/2025),"$23,888","$13,640 /yr",01-Jul-2010,"1,997 cc","156,755 km",Luxury
+Bentley Flying Spur 6.0A W12,"$858,800","$93,710 /yr",03-Jul-2020,"5,950 cc","7,200 km",Luxury
+Maserati Ghibli Diesel 3.0A,"$238,800",N.A,21-Aug-2020,"2,987 cc","62,645 km",Sports
+Toyota Corolla Altis 1.6A Elegance,"$75,888","$15,990 /yr",17-Oct-2017,"1,598 cc","102,242 km",Sedan
+Aston Martin DB11 V12 5.2A Launch Edition,"$499,000","$79,520 /yr",22-Sep-2017,"5,204 cc","41,000 km",Sports
+BMW 3 Series 316i (COE till 08/2033),"$129,800","$13,080 /yr",17-Oct-2013,"1,598 cc","55,000 km",Luxury
+Land Rover Range Rover Velar 2.0A Si4 R-Dynamic,"$155,588","$27,630 /yr",31-Oct-2017,"1,997 cc",-,SUV
+Toyota Camry 2.0A (COE till 01/2027),"$42,500","$12,970 /yr",09-Jan-2007,"1,998 cc","137,208 km",Luxury
+Nissan NV200 1.6A DX,"$73,800","$9,340 /yr",25-Aug-2021,"1,597 cc",-,Van
+Toyota Harrier Turbo 2.0A G Panoramic Roof,"$107,800","$20,930 /yr",22-Dec-2017,"1,998 cc","80,800 km",SUV
+Toyota Wish 1.8A X (COE till 07/2024),"$13,900","$17,320 /yr",20-Jul-2009,"1,797 cc",-,MPV
+Mercedes-Benz E-Class E200 Avantgarde,"$144,500","$24,580 /yr",04-Apr-2018,"1,991 cc",-,Luxury
+Honda Vezel 1.5A X,"$58,000","$15,600 /yr",20-Feb-2017,"1,496 cc",-,SUV
+BMW 1 Series 116i,"$30,000","$20,420 /yr",29-Oct-2014,"1,598 cc","67,900 km",Hatchback
+Nissan NV350 Caravan 2.0A,"$95,800","$10,100 /yr",23-Mar-2023,"1,998 cc",50 km,Van
+Toyota Corolla Altis 1.6A (COE till 04/2025),"$20,800","$13,200 /yr",28-Apr-2010,"1,598 cc","160,000 km",Sedan
+Subaru XV 1.6i-S,"$46,800","$15,250 /yr",19-Apr-2016,"1,600 cc","134,105 km",SUV
+Mazda 6 2.0A Executive,"$65,888","$14,660 /yr",19-May-2017,"1,998 cc","89,272 km",Luxury
+Toyota Dyna 150 3.0M,"$53,800","$17,640 /yr",18-Oct-2016,"2,982 cc","174,328 km",Truck
+Mercedes-Benz E-Class E200 Mild Hybrid Exclusive,"$231,500","$26,530 /yr",29-Apr-2021,"1,991 cc","42,300 km",Luxury
+Mercedes-Benz GLC-Class GLC43 AMG 4MATIC Premium Plus Sunroof,"$263,800","$31,820 /yr",13-Jul-2020,"2,996 cc","31,998 km",SUV
+Honda Grace Hybrid 1.5A DX,"$87,000","$15,000 /yr",29-Jan-2019,"1,496 cc",-,Sedan
+Land Rover Range Rover Mild Hybrid 3.0A LWB Sunroof,"$758,800","$65,670 /yr",14-Apr-2023,"2,996 cc",50 km,SUV
+Honda N-Van Turbo Style Fun Honda Sensing,"$82,000","$9,030 /yr",28-Oct-2022,658 cc,60 km,Van
+Volkswagen Sharan 2.0A TSI,"$95,800","$18,960 /yr",22-Sep-2017,"1,984 cc","64,000 km",MPV
+Citroen DS5 Hybrid 2.0A HDi Hybrid4 Sunroof,"$38,800","$14,710 /yr",02-Jul-2015,"1,997 cc","106,000 km",Stationwagon
+Toyota Raize 1.0A X,"$100,800","$13,810 /yr",25-Sep-2020,996 cc,"47,151 km",SUV
+Honda Civic 1.6A VTi,"$84,800","$16,200 /yr",16-May-2018,"1,597 cc","87,609 km",Sedan
+Mercedes-Benz S-Class S350L AMG Sunroof (COE till 03/2028),"$73,800","$16,590 /yr",12-Mar-2008,"3,498 cc",-,Luxury
+Volkswagen Golf 1.4A TSI (New 5-yr COE),"$73,800","$14,740 /yr",10-Jul-2014,"1,395 cc","141,000 km",Hatchback
+Volkswagen Golf 1.4A TSI (New 5-yr COE),"$65,800","$13,150 /yr",23-Aug-2013,"1,395 cc","122,000 km",Hatchback
+BMW 2 Series 216i Gran Coupe Sport,"$170,800","$17,130 /yr",31-Dec-2022,"1,499 cc","2,900 km",Luxury
+Mazda 6 2.5A Premium Sunroof,"$69,800","$15,900 /yr",29-Mar-2017,"2,488 cc","79,600 km",Luxury
+Mercedes-Benz S-Class S320L AMG Line,"$226,888","$35,340 /yr",20-Mar-2018,"2,996 cc","61,854 km",Luxury
+Mercedes-Benz S-Class S560L,"$309,000",N.A,23-Dec-2021,"3,982 cc",-,Luxury
+Honda Vezel Hybrid 1.5A X,"$95,500","$15,690 /yr",04-Mar-2019,"1,496 cc",-,SUV
+Toyota Alphard 2.5A S C-Package Moonroof,"$290,800","$27,570 /yr",12-Apr-2023,"2,493 cc",-,MPV
+Lexus ES250 Executive Sunroof,"$172,800","$22,140 /yr",17-Jun-2020,"2,487 cc",-,Luxury
+Lexus RX350 (COE till 08/2027),"$52,800","$13,480 /yr",31-Aug-2007,"3,456 cc","150,000 km",SUV
+Honda Vezel 1.5A G Honda Sensing,"$136,900","$14,740 /yr",11-Nov-2022,"1,496 cc",50 km,SUV
+Jaguar XF 2.0A Prestige,"$132,888","$23,750 /yr",28-Feb-2018,"1,997 cc","21,000 km",Luxury
+Mercedes-Benz GLA-Class GLA180 Urban Edition,"$103,800","$18,470 /yr",26-Jun-2018,"1,595 cc","61,500 km",Hatchback
+Honda Fit 1.3A GF,"$79,800","$12,830 /yr",30-Sep-2019,"1,317 cc","62,000 km",Hatchback
+Volkswagen Golf GTI 5DR,"$52,888","$35,670 /yr",29-Sep-2014,"1,984 cc","120,000 km",Sports
+Honda CR-V 1.5A Turbo,"$153,000","$18,790 /yr",11-Jan-2021,"1,498 cc","27,100 km",SUV
+Porsche Cayenne 3.6A Tip,"$91,000",N.A,28-Feb-2014,"3,598 cc","55,118 km",SUV
+Porsche Cayman S 3.4A Tip (COE till 05/2026),"$78,000","$29,230 /yr",20-Jun-2006,"3,387 cc","97,500 km",Sports
+Toyota Hiace 3.0M,"$24,800","$15,850 /yr",24-Apr-2015,"2,982 cc","134,800 km",Van
+Suzuki Swift Sport Mild Hybrid 1.4M Turbo,"$120,800","$15,120 /yr",26-Jul-2021,"1,373 cc","60,000 km",Hatchback
+Honda Fit 1.3A,"$98,800","$13,230 /yr",08-Jan-2021,"1,317 cc","30,000 km",Hatchback
+Nissan Note 1.2A,"$71,800","$13,220 /yr",26-Dec-2018,"1,198 cc","78,000 km",Hatchback
+Toyota Wish 1.8A (COE till 12/2025),"$32,800","$14,950 /yr",10-Dec-2005,"1,794 cc","175,000 km",MPV
+Volvo XC60 T5 2.0A,"$46,800","$17,420 /yr",15-Jun-2015,"1,969 cc",-,SUV
+Mercedes-Benz E-Class E250 Avantgarde,"$49,900","$21,930 /yr",26-Sep-2014,"1,991 cc","100,500 km",Luxury
+Honda Odyssey Hybrid 2.0A e-HEV Absolute,"$208,888","$21,660 /yr",10-Jun-2022,"1,993 cc",-,MPV
+BMW X1 sDrive20i M-Sport,"$158,800","$19,390 /yr",14-Aug-2020,"1,998 cc","65,930 km",SUV
+Kia Cerato Forte Koup 1.6A SX Sunroof (COE till 03/2025),"$18,800","$12,830 /yr",19-Mar-2010,"1,591 cc",-,Sports
+Volkswagen Jetta GP 1.4A TSI Highline,"$34,800","$13,910 /yr",22-Jul-2015,"1,390 cc",-,Sedan
+BMW 7 Series 740Li Sunroof,"$275,800","$33,520 /yr",30-Sep-2019,"2,998 cc","83,000 km",Luxury
+Hyundai Elantra 1.6A GLS,"$65,800","$13,660 /yr",20-Feb-2018,"1,591 cc",-,Sedan
+Honda Shuttle 1.5A G,"$69,800","$13,780 /yr",31-May-2018,"1,496 cc","100,000 km",Stationwagon
+Nissan Qashqai 1.2A DIG-T,"$43,800","$15,390 /yr",26-Feb-2016,"1,197 cc","176,000 km",SUV
+Volkswagen Touran 1.4A TSI,"$58,800","$18,650 /yr",04-Apr-2016,"1,390 cc","93,000 km",MPV
+Mercedes-Benz B-Class B180 Style,"$36,800","$16,710 /yr",27-May-2015,"1,595 cc","148,000 km",Hatchback
+Nissan Qashqai 1.2A DIG-T Premium,"$67,500","$14,340 /yr",09-Dec-2017,"1,197 cc","94,000 km",SUV
+Mercedes-Benz A-Class A180,"$45,800","$19,440 /yr",12-Aug-2015,"1,595 cc","137,000 km",Hatchback
+Nissan Kicks e-POWER Hybrid 1.2A Premium Plus,"$127,800","$16,820 /yr",31-Oct-2020,"1,198 cc","41,000 km",SUV
+Subaru Exiga 2.0A GT Moonroof (COE till 10/2028),"$72,800","$14,500 /yr",07-Oct-2008,"1,994 cc","142,000 km",MPV
+Mercedes-Benz GLC-Class GLC200,"$189,800","$24,000 /yr",02-Jul-2020,"1,991 cc","44,377 km",SUV
+Mitsubishi Fuso Canter FEB21,"$138,988","$13,930 /yr",21-Sep-2023,"2,998 cc",-,Truck
+Honda Shuttle 1.5A G,"$50,000","$15,600 /yr",09-Sep-2016,"1,496 cc","94,000 km",Stationwagon
+McLaren 12C (COE till 05/2031),"$445,000","$58,010 /yr",29-Jun-2012,"3,798 cc","67,000 km",Sports
+Peugeot 3008 1.2A PureTech EAT6 Allure,"$90,800","$16,360 /yr",30-Apr-2018,"1,199 cc","92,079 km",SUV
+Suzuki Swift 1.5A GL (COE till 03/2030),"$65,800","$10,150 /yr",25-Mar-2010,"1,490 cc","150,000 km",Hatchback
+Suzuki Vitara 1.4A GLX Sunroof,"$92,800","$14,680 /yr",14-May-2019,"1,373 cc","81,800 km",SUV
+Mazda RX-8 1.3A (COE till 08/2028),"$70,800","$14,480 /yr",20-Aug-2008,"1,308 cc","155,700 km",Sports
+Mercedes-Benz GLC-Class GLC300 4MATIC,"$128,800","$29,010 /yr",22-Feb-2017,"1,991 cc","99,302 km",SUV
+Toyota Vellfire 3.5A Z G-Edition,"$200,800","$33,360 /yr",01-Oct-2018,"3,456 cc","68,200 km",MPV
+Honda CR-V 2.0A (COE till 10/2028),"$62,800","$12,510 /yr",06-Oct-2008,"1,997 cc",-,SUV
+Toyota Rush 1.5A X (COE till 10/2028),"$62,800","$12,340 /yr",31-Oct-2008,"1,495 cc","137,000 km",SUV
+Mercedes-Benz S-Class S350L Sunroof (COE till 08/2030),"$98,800","$14,270 /yr",14-Oct-2010,"3,498 cc","108,000 km",Luxury
+Toyota Vellfire 2.5A Z A-Edition Moonroof,"$120,800","$29,450 /yr",13-Jan-2017,"2,493 cc","110,000 km",MPV
+Toyota Wish 1.8A,"$45,800","$18,130 /yr",03-Aug-2015,"1,798 cc","102,000 km",MPV
+Toyota Camry 2.4A (COE till 04/2028),"$51,800","$11,470 /yr",05-Apr-2008,"2,362 cc","145,288 km",Luxury
+Toyota Corolla Altis 1.6A,"$56,800","$14,880 /yr",22-Nov-2016,"1,598 cc",-,Sedan
+Lexus NX Hybrid NX350h Luxury Sunroof,"$278,800","$27,270 /yr",21-Oct-2022,"2,487 cc","21,500 km",SUV
+Toyota Sienta Hybrid 1.5A G,"$110,800","$16,470 /yr",15-Nov-2019,"1,496 cc","48,000 km",MPV
+Kia Sonet 1.5A SX Sunroof,"$129,800","$13,740 /yr",25-Jul-2022,"1,497 cc","11,000 km",SUV
+Kia Cerato Forte Koup 1.6A SX Sunroof (COE till 02/2025),"$19,800","$14,060 /yr",26-Feb-2010,"1,591 cc","166,000 km",Sedan
+Honda Vezel 1.5A X,"$92,800","$14,390 /yr",16-Sep-2019,"1,496 cc","67,000 km",SUV
+Suzuki Swift Hybrid 1.2A GLX,"$102,800","$13,590 /yr",15-Feb-2021,"1,197 cc","40,000 km",Hatchback
+Audi Q7 3.0A TFSI Quattro S-Line (COE till 10/2030),"$109,800","$15,490 /yr",12-Jan-2011,"2,995 cc","112,081 km",SUV
+Suzuki Swift Mild Hybrid 1.2A RS,"$96,800","$12,860 /yr",29-Jan-2021,"1,242 cc","39,000 km",Hatchback
+Ford Ranger Double-Cab 2.0A,"$138,800","$22,800 /yr",31-Oct-2019,"1,996 cc","95,200 km",Truck
+Mercedes-Benz A-Class A180 Style,"$84,800","$18,220 /yr",22-Nov-2017,"1,595 cc",-,Hatchback
+Lexus ES300 (COE till 03/2024),"$8,500","$16,950 /yr",23-Apr-2004,"2,995 cc","75,258 km",Luxury
+Subaru XV 2.0i-S EyeSight,"$133,988","$15,430 /yr",08-Dec-2021,"1,995 cc","12,500 km",SUV
+Honda Fit 1.3A GF,"$81,800","$13,500 /yr",01-Aug-2019,"1,317 cc","24,391 km",Hatchback
+Honda Insight Hybrid 1.3A (COE till 03/2026),"$31,800","$12,830 /yr",24-Mar-2011,"1,339 cc","141,000 km",Hatchback
+Toyota Corolla Altis 1.6A (COE till 08/2024),"$10,800","$11,910 /yr",27-Aug-2009,"1,598 cc","160,000 km",Sedan
+Volkswagen Golf 1.2A TSI,"$24,800","$15,800 /yr",27-Feb-2015,"1,197 cc",-,Hatchback
+Toyota Vios 1.5A E (COE till 01/2024),"$5,200",N.A,18-Feb-2009,"1,497 cc","172,960 km",Sedan
+Mazda 6 2.5A Luxury Sunroof,"$70,800","$16,320 /yr",15-Mar-2017,"2,488 cc","95,553 km",Luxury
+Toyota Corolla Altis 1.6A,"$20,800","$14,870 /yr",08-Sep-2014,"1,598 cc","134,000 km",Sedan
+Honda Jazz 1.3A,"$89,800","$13,350 /yr",26-Mar-2020,"1,318 cc","25,641 km",Hatchback
+BYD Atto 3 Electric,"$179,800","$19,810 /yr",25-Oct-2022,-,"6,000 km",SUV
+Audi A5 Cabriolet Mild Hybrid 2.0A TFSI S-tronic Advanced,"$239,800","$26,980 /yr",12-May-2021,"1,984 cc","21,498 km",Sports
+Mercedes-Benz A-Class A180,"$47,800","$18,750 /yr",15-Oct-2015,"1,595 cc","96,409 km",Hatchback
+Jaguar XF 2.0A R-Sport,"$152,800","$21,690 /yr",31-Jul-2019,"1,997 cc","22,070 km",Luxury
+BMW 3 Series 318i Highline,"$180,800","$19,720 /yr",20-Aug-2021,"1,998 cc","19,641 km",Luxury
+Toyota Harrier 2.0A Premium Panoramic Roof,"$50,800","$19,830 /yr",12-Aug-2015,"1,986 cc","92,500 km",SUV
+Mercedes-Benz S-Class S450L,"$258,000","$34,650 /yr",29-Nov-2018,"2,996 cc","102,000 km",Luxury
+Toyota Voxy Hybrid 1.8A V,"$126,800","$23,770 /yr",29-Jun-2018,"1,797 cc",-,MPV
+Toyota Noah Hybrid 1.8A X,"$240,000","$23,430 /yr",13-Sep-2023,"1,797 cc",27 km,MPV
+Honda CR-V 2.0A (COE till 09/2027),"$52,800","$13,420 /yr",06-Sep-2007,"1,997 cc",-,SUV
+Volkswagen Jetta 1.4A TSI (COE till 08/2025),"$24,800","$13,020 /yr",26-Aug-2010,"1,390 cc","133,000 km",Sedan
+Honda Crossroad 1.8A (COE till 08/2029),"$84,800","$14,320 /yr",29-Oct-2009,"1,799 cc",-,SUV
+Honda Fit Hybrid 1.5A,"$96,800","$14,580 /yr",04-Feb-2020,"1,496 cc","52,300 km",Hatchback
+Audi R8 Spyder 4.2A FSI Quattro R-tronic (COE till 06/2031),"$249,800","$32,220 /yr",13-Jan-2012,"4,163 cc","44,000 km",Sports
+Lexus RX400h Hybrid Sunroof (COE till 06/2028),"$64,800","$13,640 /yr",30-Jun-2008,"3,311 cc","150,000 km",SUV
+Subaru Forester 2.0i-L Sunroof,"$65,800","$15,930 /yr",31-May-2017,"1,995 cc","68,000 km",SUV
+Mazda CX-3 2.0A Standard,"$75,000","$14,460 /yr",03-Apr-2018,"1,998 cc","62,133 km",SUV
+Mercedes-Benz C-Class C200 Avantgarde (COE till 07/2028),"$60,800","$12,630 /yr",23-Jul-2008,"1,796 cc","108,000 km",Luxury
+Toyota Wish 1.8A X (COE till 11/2028),"$64,800","$12,590 /yr",21-Nov-2008,"1,794 cc",-,MPV
+Volkswagen Golf 1.2A TSI,"$33,800","$14,360 /yr",27-Oct-2015,"1,197 cc",-,Hatchback
+Toyota Camry Hybrid 2.5A Ascent Sport,"$152,800","$18,910 /yr",19-Mar-2021,"2,487 cc","23,000 km",Luxury
+Nissan Cabstar 3.0M,"$51,800","$13,250 /yr",28-Aug-2017,"2,953 cc",-,Truck
+BMW 6 Series 640i Gran Coupe M-Sport Sunroof (COE till 01/2033),"$166,800","$17,850 /yr",31-Jan-2013,"2,979 cc","127,000 km",Sports
+Golden Dragon ABS EV Electric,"$91,999","$9,970 /yr",19-Dec-2022,-,-,Bus
+Nissan Cabstar 3.0M,"$43,800","$15,510 /yr",28-Jul-2016,"2,953 cc",-,Truck
+Mazda 3 1.5A Deluxe Sunroof,"$61,800","$15,240 /yr",28-Apr-2017,"1,496 cc","94,300 km",Sedan
+Golden Dragon Electric XML5036,"$82,999","$9,590 /yr",26-May-2022,-,-,Van
+Honda Vezel 1.5A RS,"$68,800","$15,690 /yr",09-Jun-2017,"1,496 cc","87,000 km",SUV
+Honda Shuttle 1.5A G Honda Sensing,"$128,800","$14,560 /yr",20-Apr-2022,"1,496 cc","2,500 km",Stationwagon
+Land Rover Defender 90 Hardtop,"$89,800","$46,360 /yr",07-Sep-2015,"2,198 cc","65,410 km",Truck
+Mercedes-Benz E-Class E200 Avantgarde,"$130,800","$24,640 /yr",20-Sep-2017,"1,991 cc","108,000 km",Luxury
+Toyota Voxy Hybrid 1.8A V,"$143,800","$23,090 /yr",23-Apr-2019,"1,797 cc","55,123 km",MPV
+Toyota Corolla Altis 1.6A (COE till 04/2024),"$8,800","$15,080 /yr",22-Jun-2009,"1,598 cc",-,Sedan
+Toyota Estima 2.4A X Moonroof (COE till 02/2029),"$79,800","$14,730 /yr",06-Mar-2009,"2,362 cc","161,000 km",MPV
+Mazda CX-5 2.0A Premium,"$52,800","$17,000 /yr",25-Jan-2016,"1,998 cc","70,600 km",SUV
+Volkswagen New Beetle 1.6A (COE till 02/2030),"$66,800","$10,410 /yr",04-Mar-2010,"1,595 cc",-,Hatchback
+Toyota Hiace 2.8A DX,"$73,800","$15,490 /yr",05-Jul-2018,"2,754 cc",-,Van
+Honda Vezel Hybrid 1.5A e:HEV X Honda Sensing,"$192,000","$18,390 /yr",24-Sep-2023,"1,496 cc",27 km,SUV
+Honda Odyssey Hybrid 2.0A e-HEV Absolute,"$210,800","$24,860 /yr",30-Apr-2021,"1,993 cc","57,355 km",MPV
+Honda Vezel 1.5A X,"$90,800","$15,330 /yr",22-Mar-2019,"1,496 cc","45,209 km",SUV
+Mazda 3 1.5A  Sunroof,"$40,888","$12,770 /yr",30-Jun-2016,"1,496 cc","85,000 km",Sedan
+Volkswagen Jetta GP 1.4A TSI,"$40,800","$14,780 /yr",30-Nov-2015,"1,390 cc","110,000 km",Sedan
+Toyota Sienta 1.5A G,"$103,800","$16,090 /yr",23-Sep-2019,"1,496 cc","52,200 km",MPV
+Hyundai Elantra 1.6A GLS S,"$49,800","$13,710 /yr",19-Nov-2016,"1,591 cc","112,792 km",Sedan
+Lexus ES Hybrid ES300h Executive Sunroof,"$111,800","$19,950 /yr",22-Jan-2018,"2,494 cc","119,000 km",Luxury
+Honda HR-V 1.5A LX,"$96,800","$14,710 /yr",08-Jul-2019,"1,496 cc","80,000 km",SUV
+Ssangyong Actyon Sports Double-Cab 2.0A (New 5-yr COE),"$59,800","$11,950 /yr",23-Apr-2014,"1,998 cc",-,Truck
+Hyundai Elantra 1.6A GLS Elite,"$77,800","$14,340 /yr",30-Aug-2018,"1,591 cc","75,862 km",Sedan
+Honda Vezel Hybrid 1.5A X,"$70,800","$16,320 /yr",07-Dec-2017,"1,496 cc","72,000 km",SUV
+Hyundai i30 1.6A Sunroof (COE till 11/2028),"$59,800","$11,560 /yr",12-Dec-2008,"1,591 cc","130,000 km",Hatchback
+Toyota Hiace 3.0M,"$78,800","$11,540 /yr",28-Jul-2020,"2,982 cc",-,Van
+Suzuki Swift 1.5A (COE till 12/2028),"$55,988","$10,720 /yr",19-Dec-2008,"1,490 cc","158,000 km",Hatchback
+Honda Jazz 1.3A L (COE till 04/2026),"$32,800","$12,700 /yr",07-Jun-2011,"1,339 cc","144,200 km",Hatchback
+Renault Grand Scenic Diesel 1.5A dCi,"$88,800","$15,330 /yr",18-Dec-2018,"1,461 cc","108,000 km",MPV
+Audi SQ5 Sportback 3.0A TFSI Quattro Tip,"$360,800","$33,430 /yr",15-Feb-2023,"2,995 cc","2,900 km",SUV
+Hyundai Avante 1.6A GLS,"$93,800","$13,790 /yr",31-Jan-2020,"1,591 cc","60,920 km",Sedan
+Toyota Vios 1.5A E,"$67,888","$13,640 /yr",21-Mar-2018,"1,496 cc","82,000 km",Sedan
+Peugeot 3008 1.6A PureTech EAT8 Active,"$109,800","$16,680 /yr",26-Jul-2019,"1,598 cc","45,000 km",SUV
+Nissan Juke 1.6A (COE till 02/2031),"$78,888","$10,630 /yr",16-Mar-2011,"1,598 cc","120,000 km",SUV
+MINI One 1.2A,"$24,888","$17,100 /yr",02-Jan-2015,"1,198 cc","95,000 km",Hatchback
+Hyundai Tucson 2.0A Sunroof (COE till 12/2029),"$76,800","$12,270 /yr",02-Jan-2010,"1,998 cc",-,SUV
+Nissan NV200 1.6A DX,"$68,800","$10,130 /yr",15-Jul-2020,"1,597 cc",-,Van
+Nissan Qashqai 1.2A DIG-T Premium,"$76,800","$14,010 /yr",28-Jun-2018,"1,197 cc","144,000 km",SUV
+Toyota Dyna 150 3.0M,"$66,800","$17,210 /yr",18-Aug-2017,"2,982 cc","81,000 km",Truck
+BMW X1 sDrive18i,"$122,800","$18,230 /yr",30-Apr-2019,"1,499 cc","77,595 km",SUV
+Kia Carens Diesel 1.7A SX,"$88,800","$15,110 /yr",02-Nov-2018,"1,685 cc","83,000 km",MPV
+Citroen C4 Picasso Diesel 1.6A BlueHDi,"$36,955","$13,820 /yr",26-Jan-2016,"1,560 cc",-,Hatchback
+Mercedes-Benz E-Class E250,"$40,000",N.A,28-Feb-2014,"1,991 cc",-,Luxury
+SOKON EC31 Electric,"$105,800","$11,260 /yr",21-Feb-2023,-,-,Truck
+Honda Civic Type-R 2.0M (COE till 04/2030),"$128,500","$19,510 /yr",29-Jul-2010,"1,998 cc","156,000 km",Sports
+Nissan NV350 2.5M,"$65,800","$10,570 /yr",21-Dec-2019,"2,488 cc",-,Van
+Nissan Qashqai 1.2A DIG-T,"$55,888","$14,920 /yr",12-Jan-2017,"1,197 cc","89,000 km",SUV
+Mitsubishi Fuso Canter FEB21,"$135,800","$13,910 /yr",03-Jul-2023,"2,998 cc",-,Truck
+Toyota Dyna 150 3.0M,"$80,800","$16,120 /yr",04-Oct-2018,"2,982 cc",-,Truck
+Honda Fit 1.3A Honda Sensing,"$95,800","$12,240 /yr",14-May-2021,"1,317 cc","45,000 km",Hatchback
+Audi Q5 Mild Hybrid 2.0A TFSI Quattro S-tronic,"$229,999","$24,710 /yr",26-Jan-2022,"1,984 cc","18,800 km",SUV
+Honda N-Van Turbo Style Fun Honda Sensing,"$85,800","$9,050 /yr",23-Mar-2023,658 cc,-,Van
+Mercedes-Benz C-Class C180 Coupe,"$132,800","$22,700 /yr",17-Jul-2018,"1,595 cc",-,Luxury
+Mercedes-Benz E-Class E200 Exclusive,"$129,800","$24,060 /yr",04-Sep-2017,"1,991 cc","77,000 km",Luxury
+Mazda 3 1.6A (COE till 03/2025),"$17,500","$11,790 /yr",26-Mar-2010,"1,598 cc","140,000 km",Sedan
+BMW X1 sDrive16i M-Sport,"$215,777","$20,640 /yr",24-Feb-2023,"1,499 cc","2,160 km",SUV
+Honda HR-V 1.5A DX,"$65,888","$15,210 /yr",07-Aug-2017,"1,496 cc","93,000 km",SUV
+Citroen Grand C4 SpaceTourer 1.2A PureTech EAT6,"$92,955","$15,910 /yr",16-Nov-2018,"1,199 cc","82,000 km",MPV
+Mercedes-Benz S-Class S320L,"$166,288","$27,700 /yr",28-Apr-2017,"2,996 cc","117,801 km",Luxury
+Honda Fit 1.3A G (COE till 02/2024),"$4,800",N.A,09-Feb-2009,"1,339 cc","100,000 km",Hatchback
+Honda Shuttle 1.5A G LED,"$50,800","$16,850 /yr",20-Jul-2016,"1,496 cc","76,792 km",Stationwagon
+Lexus UX200 Executive,"$133,888","$21,220 /yr",01-Feb-2019,"1,987 cc","89,732 km",SUV
+Toyota Corolla Altis 1.6A 50th Anniversary Edition,"$59,800","$15,620 /yr",08-Dec-2016,"1,598 cc","69,317 km",Sedan
+Nissan Sunny 1.6A EX (COE till 08/2028),"$45,888","$9,330 /yr",31-Aug-2008,"1,597 cc","156,000 km",Sedan
+Skoda Karoq 1.5A TSI Ambition,"$104,800","$17,030 /yr",12-Mar-2019,"1,498 cc","96,000 km",SUV
+Toyota Corolla Altis 1.6A,"$42,500","$15,900 /yr",21-Oct-2015,"1,598 cc","90,330 km",Sedan
+Mercedes-Benz 219 Ponton (COE till 06/2029),"$99,000","$17,220 /yr",26-Jun-2019,"2,195 cc",-,Luxury
+Volkswagen Touran 1.4A TSI Comfortline Sunroof,"$136,800","$17,530 /yr",29-Oct-2020,"1,395 cc","35,000 km",MPV
+Honda Fit 1.3A (COE till 04/2024),"$6,900","$12,780 /yr",15-Apr-2009,"1,339 cc","100,000 km",Hatchback
+Opel Grandland X 1.2A Turbo Innovation Premium,"$96,800","$14,960 /yr",25-Jan-2019,"1,199 cc","48,700 km",SUV
+Mercedes-Benz GLS-Class GLS400d AMG Line Premium Plus,"$383,800","$37,600 /yr",11-Jan-2022,"2,925 cc","35,000 km",SUV
+Honda Civic 1.6A VTi (COE till 04/2026),"$33,800","$13,140 /yr",27-Apr-2011,"1,595 cc","100,000 km",Sedan
+Kia Stonic 1.0T EX,"$105,800","$12,790 /yr",27-Oct-2021,998 cc,"26,000 km",SUV
+Peugeot Partner 1.6A HDi LWB,"$22,800","$9,230 /yr",21-Mar-2016,"1,560 cc","102,000 km",Van
+Porsche Panamera 3.6A PDK Edition V6,"$152,800","$30,150 /yr",11-Jan-2016,"3,605 cc","124,000 km",Sports
+BMW X5 xDrive25d M-Sport,"$137,800","$29,390 /yr",30-Nov-2016,"1,995 cc","113,888 km",SUV
+Volvo S60 T2,"$77,888","$15,890 /yr",08-Dec-2017,"1,498 cc","123,000 km",Luxury
+BMW 3 Series 335i Coupe Sunroof (COE till 04/2028),"$77,888","$17,140 /yr",16-Apr-2008,"2,979 cc","116,800 km",Sports
+Nissan Cabstar 3.0M,"$30,800","$15,250 /yr",07-Oct-2015,"2,953 cc",-,Truck
+Mitsubishi Fuso Canter FEB71,"$46,800",N.A,30-Jun-2016,"2,998 cc",-,Truck
+BMW 2 Series 220i Coupe,"$141,800","$23,880 /yr",20-Sep-2018,"1,998 cc","64,000 km",Sports
+Mercedes-Benz SLK-Class SLK350 (COE till 08/2031),"$120,800","$15,250 /yr",29-Sep-2011,"3,498 cc","83,000 km",Sports
+BYD T3 Electric,"$108,800","$11,210 /yr",14-Jun-2023,-,35 km,Van
+Toyota Camry 2.0A,"$58,888","$16,360 /yr",13-May-2016,"1,998 cc",-,Luxury
+Toyota Estima 2.4A Aeras Premium Moonroof,"$118,800","$23,250 /yr",27-Nov-2017,"2,362 cc","64,000 km",MPV
+SEAT Ibiza 1.0A EcoTSI DSG Style,"$103,955","$11,910 /yr",30-Sep-2021,999 cc,"10,300 km",Hatchback
+Mazda 6 2.0A Executive,"$37,888","$15,250 /yr",26-Aug-2015,"1,998 cc","104,000 km",Luxury
+Audi A3 2.0A TFSI Quattro S-Line (COE till 04/2029),"$73,800","$13,210 /yr",10-Jun-2009,"1,984 cc",-,Hatchback
+Toyota Previa 2.4A 8-Seater Moonroof (COE till 12/2028),"$66,800","$12,860 /yr",09-Dec-2008,"2,362 cc",-,MPV
+BMW X5 xDrive45e Plug-in Hybrid xLine,"$398,800","$36,670 /yr",03-Oct-2022,"2,998 cc","11,000 km",SUV
+Honda Crossroad 1.8A (COE till 09/2028),"$72,288","$14,440 /yr",10-Oct-2008,"1,799 cc",-,SUV
+Tesla Model 3 Electric Standard Range RWD,"$215,555","$21,440 /yr",29-Nov-2022,-,"5,888 km",Luxury
+Porsche Boxster S 3.4A PDK (COE till 09/2031),"$240,000","$29,980 /yr",12-Jul-2012,"3,436 cc","149,500 km",Sports
+Nissan X-Trail 2.0A 7-Seater Sunroof,"$54,800","$16,570 /yr",06-May-2016,"1,997 cc","74,578 km",SUV
+Mitsubishi Outlander 2.4A Sunroof,"$39,888","$18,060 /yr",26-Jun-2015,"2,360 cc","113,098 km",SUV
+Mitsubishi Attrage 1.2A Sports,"$79,888","$12,080 /yr",25-Feb-2020,"1,193 cc","40,000 km",Sedan
+Audi Q3 2.0A TFSI Quattro S-tronic,"$201,800","$20,040 /yr",30-Nov-2022,"1,984 cc","5,000 km",SUV
+BMW 4 Series 420i Gran Coupe,"$104,800","$21,640 /yr",27-Jul-2017,"1,998 cc","73,000 km",Luxury
+Nissan X-Trail 2.0A Premium 7-Seater Sunroof,"$56,888","$16,440 /yr",28-Jun-2016,"1,997 cc","122,864 km",SUV
+Honda Jazz 1.5A RS,"$40,088","$16,160 /yr",26-Nov-2015,"1,498 cc","87,200 km",Hatchback
+Honda Mobilio 1.5A RS i-VTEC Luxe,"$38,888","$16,270 /yr",22-Jul-2015,"1,497 cc","92,000 km",MPV
+Toyota Dyna 150 3.0M,"$72,228","$16,260 /yr",09-Mar-2018,"2,982 cc","61,000 km",Truck
+Subaru Forester 2.0A XT Sunroof,"$42,888","$18,000 /yr",27-Aug-2015,"1,998 cc","108,591 km",SUV
+Mercedes-Benz CLA-Class CLA180 Shooting Brake,"$77,500","$19,240 /yr",23-Dec-2016,"1,595 cc","105,818 km",Stationwagon
+Jaguar XF 2.0A Prestige,"$62,800","$18,130 /yr",30-Jun-2015,"1,999 cc","98,000 km",Luxury
+Hyundai Accent 1.4A,"$77,888","$12,490 /yr",16-Aug-2019,"1,368 cc","58,000 km",Sedan
+Kia Sportage 2.0A GT Line,"$66,800","$15,980 /yr",09-Jan-2017,"1,999 cc","140,000 km",SUV
+BMW 2 Series 218i Gran Coupe Luxury,"$150,800","$16,830 /yr",14-Jun-2021,"1,499 cc","31,000 km",Luxury
+Mazda 3 1.5A Deluxe Sunroof,"$72,800","$14,050 /yr",05-Apr-2018,"1,496 cc","56,013 km",Sedan
+BMW 4 Series 420i Convertible M-Sport,"$161,888","$26,850 /yr",30-Jul-2018,"1,998 cc","46,259 km",Sports
+Lexus ES250 Executive Sunroof,"$186,800","$22,840 /yr",11-Nov-2020,"2,487 cc","26,971 km",Luxury
+Mazda 3 1.5A,"$41,800","$11,740 /yr",11-Oct-2016,"1,496 cc",-,Sedan
+Audi A6 2.0A TFSI MU (COE till 08/2028),"$59,800","$12,170 /yr",28-Aug-2008,"1,984 cc",-,Luxury
+BMW 2 Series 218i Active Tourer,"$34,800","$18,410 /yr",10-Feb-2015,"1,499 cc","74,000 km",Hatchback
+Mercedes-Benz GLC-Class GLC300 Mild Hybrid 4MATIC Avantgarde,"$338,888","$31,110 /yr",05-May-2023,"1,999 cc","6,000 km",SUV
+Mitsubishi Fuso Canter FB70  (New 5-yr COE),"$47,800","$9,550 /yr",08-Jul-2013,"2,977 cc",-,Truck
+Toyota Corolla Altis 1.6A Classic,"$51,800","$13,940 /yr",26-Oct-2016,"1,598 cc","96,377 km",Sedan
+Mitsubishi Lancer EX 1.6A,"$46,800","$12,460 /yr",15-Dec-2016,"1,590 cc",-,Sedan
+Mercedes-Benz GLA-Class GLA200,"$44,800","$21,430 /yr",27-Apr-2015,"1,595 cc","85,000 km",SUV
+Suzuki Swift Mega Sports 1.6M (COE till 05/2028),"$79,800","$17,320 /yr",09-May-2008,"1,586 cc",-,Hatchback
+BMW 3 Series 316i Sport (COE till 05/2028),"$68,800","$14,820 /yr",21-May-2013,"1,598 cc",-,Luxury
+Lexus NX Turbo NX300 Executive,"$147,800","$22,290 /yr",10-Apr-2019,"1,998 cc","75,000 km",SUV
+BMW X3 sDrive20i M-Sport,"$151,800","$23,460 /yr",19-Feb-2019,"1,998 cc","89,891 km",SUV
+Mazda 6 Wagon 2.5A Sunroof,"$73,800","$16,420 /yr",27-Apr-2017,"2,488 cc","73,000 km",Stationwagon
+BMW 1 Series 116d,"$67,800","$15,020 /yr",25-Oct-2017,"1,496 cc",-,Hatchback
+Renault Kangoo II Express WAV 1.6A,"$16,800",N.A,09-Jan-2014,"1,598 cc","96,000 km",Stationwagon
+Kia Cerato Forte 1.6A EX (COE till 10/2029),"$63,800","$10,480 /yr",30-Oct-2009,"1,591 cc","138,000 km",Sedan
+Audi A6 2.0A TFSI MU (COE till 06/2025),"$29,200","$16,940 /yr",21-Jun-2010,"1,984 cc","86,700 km",Luxury
+MINI Cooper S 1.6A (COE till 12/2031),"$90,800","$11,000 /yr",13-Feb-2012,"1,598 cc",-,Sports
+Audi A4 1.8A TFSI MU,"$30,800","$16,820 /yr",28-Nov-2014,"1,798 cc",-,Luxury
+Toyota Estima Aeras 2.4A Sunroof (COE till 09/2027),"$62,800","$15,690 /yr",15-Apr-2008,"2,362 cc",-,MPV
+Audi A3 Sedan 1.4A TFSI Ambiente,"$26,900","$16,750 /yr",26-Nov-2014,"1,395 cc","90,000 km",Luxury
+Mercedes-Benz A-Class A180,"$51,888","$21,810 /yr",09-Sep-2015,"1,595 cc","94,094 km",Hatchback
+Mercedes-Benz GLA-Class GLA200 Sport Executive,"$248,888",N.A,N.A.,"1,332 cc",-,SUV
+Mazda 6 2.0A,"$88,800","$16,130 /yr",31-Aug-2018,"1,998 cc","88,021 km",Luxury
+Mitsubishi Space Star 1.2A Sport (OPC),"$47,800","$9,900 /yr",27-Apr-2018,"1,193 cc","35,286 km",Hatchback
+Mercedes-Benz C-Class C180 (COE till 07/2031),"$89,500","$11,420 /yr",22-Dec-2011,"1,597 cc","115,993 km",Luxury
+Honda Vezel Hybrid 1.5A X,"$51,800","$16,750 /yr",09-Sep-2016,"1,496 cc","102,078 km",SUV
+Toyota Sienta Hybrid 1.5A G,"$124,988","$16,320 /yr",30-Oct-2020,"1,496 cc","38,000 km",MPV
+Mercedes-Benz C-Class C180 Mild Hybrid Avantgarde,"$218,888","$22,890 /yr",18-Apr-2022,"1,496 cc","20,000 km",Luxury
+Mazda 3 1.5A Sunroof,"$38,388","$14,950 /yr",23-Dec-2015,"1,496 cc","76,500 km",Sedan
+Honda Freed Hybrid 1.5A G Welcab,"$137,688","$18,850 /yr",07-Apr-2020,"1,496 cc","31,000 km",MPV
+BMW 3 Series 318i Shadow Edition,"$89,688","$17,740 /yr",23-Oct-2017,"1,499 cc",-,Luxury
+Mazda CX-3 2.0A Deluxe,"$81,777","$13,910 /yr",31-Oct-2018,"1,998 cc","85,000 km",SUV
+Toyota Yaris Cross 1.5A XB,"$126,800","$13,560 /yr",28-Nov-2022,"1,490 cc","27,500 km",SUV
+BMW 2 Series 218i Coupe Sunroof,"$99,800","$18,940 /yr",31-Jan-2018,"1,499 cc","51,000 km",Sports
+Mazda 6 2.5A Sunroof,"$68,988","$16,880 /yr",29-Dec-2016,"2,488 cc","75,000 km",Luxury
+Mercedes-Benz E-Class E300 Coupe AMG Line Premium Plus Sunroof,"$179,800","$28,860 /yr",22-May-2018,"1,991 cc","68,000 km",Sports
+MINI Cooper S Countryman 2.0A JCW Aero Kit,"$169,888","$22,440 /yr",31-Mar-2020,"1,998 cc","30,188 km",Sports
+Mazda 3 1.5A Deluxe Sunroof,"$34,800","$15,310 /yr",17-Aug-2015,"1,496 cc","144,303 km",Sedan
+Mazda 3 HB 1.5A Sunroof,"$35,800","$15,510 /yr",27-Aug-2015,"1,496 cc",-,Hatchback
+Hyundai TL Tucson 2.0A GLS,"$54,388","$17,560 /yr",26-Apr-2016,"1,999 cc","80,000 km",SUV
+Toyota Vios 1.5A E,"$79,888","$13,840 /yr",07-Jan-2019,"1,496 cc","40,000 km",Sedan
+Mercedes-Benz CLA-Class CLA180 Urban,"$102,988","$19,430 /yr",16-Mar-2018,"1,595 cc","71,500 km",Luxury
+Toyota Wish 1.8A Elegance,"$58,800","$16,760 /yr",29-Aug-2016,"1,798 cc",-,MPV
+Honda Fit 1.5M RS (COE till 05/2028),"$55,588","$11,940 /yr",27-May-2008,"1,496 cc","181,000 km",Hatchback
+Toyota Camry Hybrid 2.5A Ascent,"$120,888","$18,660 /yr",14-Aug-2019,"2,487 cc","51,000 km",Luxury
+Kia Cerato 1.6A GT Line SX Sunroof,"$126,388","$13,950 /yr",26-Jan-2022,"1,591 cc","16,000 km",Sedan
+Porsche 718 Boxster 2.0A PDK,"$332,388","$40,960 /yr",28-Aug-2020,"1,988 cc","14,000 km",Sports
+Maserati Ghibli S 3.0A,"$188,888","$39,190 /yr",27-Oct-2016,"2,979 cc","110,268 km",Luxury
+BMW 4 Series 420i Gran Coupe M-Sport,"$122,800","$23,100 /yr",10-Oct-2017,"1,998 cc","58,000 km",Luxury
+Porsche Panamera 3.6A PDK (COE till 01/2032),"$178,888","$21,540 /yr",18-Jan-2012,"3,605 cc","137,009 km",Sports
+Opel Adam 1.4A,"$46,800","$14,050 /yr",01-Nov-2016,"1,398 cc",-,Hatchback
+Audi Q5 2.0A TFSI Quattro,"$65,800","$21,410 /yr",16-Jul-2015,"1,984 cc","90,000 km",SUV
+Porsche Boxster S 3.4A PDK,"$168,000",N.A,02-Jan-2014,"3,436 cc","89,990 km",Sports
+Honda Stream 1.8A (COE till 05/2028),"$58,800","$12,620 /yr",27-May-2008,"1,799 cc",-,MPV
+Honda Shuttle 1.5A G LED Honda Sensing,"$119,800","$14,190 /yr",30-Nov-2021,"1,496 cc","15,335 km",Stationwagon
+Honda Freed Hybrid 1.5A G 7-Seater Honda Sensing,"$99,588","$17,990 /yr",05-Oct-2018,"1,496 cc","68,000 km",MPV
+Mitsubishi Lancer EX 1.6A Sports,"$43,388","$13,890 /yr",20-May-2016,"1,590 cc","91,000 km",Sedan
+Renault Scenic Diesel 1.5A dCi,"$73,800","$13,530 /yr",29-Aug-2018,"1,461 cc","60,026 km",Hatchback
+Mercedes-Benz GLC-Class GLC250 Coupe AMG Line 4MATIC Night Edition,"$195,388","$26,920 /yr",01-Nov-2019,"1,991 cc","61,000 km",SUV
+Nissan NV200 1.6A DX,"$59,800","$10,170 /yr",16-Aug-2019,"1,597 cc",-,Van
+Hyundai Avante 1.6A (COE till 04/2029),"$55,800","$10,000 /yr",29-Apr-2009,"1,591 cc","135,495 km",Sedan
+Honda Vezel Hybrid 1.5A X,"$74,800","$17,440 /yr",22-Nov-2017,"1,496 cc","58,559 km",SUV
+Toyota Dyna 150 3.0M (New 5-yr COE),"$52,800","$10,550 /yr",30-Oct-2008,"2,982 cc",-,Truck
+Mercedes-Benz B-Class B180 Style,"$69,800","$18,730 /yr",02-Nov-2016,"1,595 cc",-,Hatchback
+Honda Fit 1.3A,"$89,800","$12,000 /yr",08-Jan-2021,"1,317 cc",-,Hatchback
+Toyota Corolla Altis 1.6A Standard,"$92,888","$13,840 /yr",11-Oct-2019,"1,598 cc","56,000 km",Sedan
+BMW 4 Series 430i Convertible M-Sport Pro,"$315,800","$29,780 /yr",31-Oct-2022,"1,998 cc","9,339 km",Sports
+BMW X6 xDrive35i Sunroof (COE till 04/2031),"$137,800","$18,160 /yr",31-May-2012,"2,979 cc","130,000 km",SUV
+Mercedes-Benz E-Class E250 CGI Coupe (COE till 11/2029),"$85,800","$13,900 /yr",05-Feb-2010,"1,796 cc","134,318 km",Sports
+Mercedes-Benz E-Class E200 Avantgarde,"$266,888","$26,320 /yr",28-Jul-2022,"1,991 cc","10,000 km",Luxury
+Volvo S60 Diesel D2,"$30,800","$15,010 /yr",12-Mar-2015,"1,560 cc","128,339 km",Luxury
+Toyota Sienta Hybrid 1.5A G,"$123,888","$16,020 /yr",20-Nov-2020,"1,496 cc","29,000 km",MPV
+Honda Vezel 1.5A X,"$88,800","$15,290 /yr",15-Jan-2019,"1,496 cc","57,695 km",SUV
+Mercedes-Benz GLA-Class GLA180 Urban Edition,"$111,888","$18,940 /yr",24-Oct-2018,"1,595 cc","95,000 km",SUV
+Mercedes-Benz C-Class C180K (COE till 03/2032),"$95,800","$11,310 /yr",20-Mar-2012,"1,597 cc","123,786 km",Luxury
+Audi A1 Sportback 1.0A TFSI S-tronic,"$58,000","$16,040 /yr",25-Feb-2017,999 cc,"93,000 km",Hatchback
+Maserati GranTurismo Cambiocorsa (COE till 10/2031),"$212,000","$26,200 /yr",24-Feb-2012,"4,691 cc","74,000 km",Sports
+Honda Shuttle Hybrid 1.5A,"$82,800","$17,010 /yr",19-Jun-2018,"1,496 cc","38,985 km",Stationwagon
+MINI Cooper S Countryman 2.0A,"$117,800","$21,350 /yr",12-Mar-2018,"1,998 cc","85,339 km",Sports
+Maserati Ghibli 3.0A Sunroof (New 10-yr COE),"$228,000","$22,780 /yr",21-Mar-2014,"2,979 cc","95,000 km",Luxury
+Toyota Wish 2.0A (COE till 03/2025),"$23,800","$16,520 /yr",10-Mar-2010,"1,987 cc","151,127 km",MPV
+Toyota Wish 1.8A X,"$74,688","$16,940 /yr",14-Jul-2017,"1,797 cc","62,000 km",MPV
+BMW X1 sDrive18i,"$72,888","$22,520 /yr",05-May-2016,"1,499 cc",-,SUV
+Lexus RX270 Sport,"$59,800","$34,490 /yr",11-Aug-2014,"2,672 cc","111,000 km",SUV
+Mercedes-Benz GLC-Class GLC250 AMG Line 4MATIC,"$142,800","$27,990 /yr",01-Nov-2017,"1,991 cc","68,000 km",SUV
+Suzuki Swift 1.5A (COE till 01/2025),"$15,998","$12,400 /yr",14-Jan-2010,"1,490 cc","124,000 km",Hatchback
+Mercedes-Benz A-Class A200 Progressive,"$121,800","$19,990 /yr",30-Nov-2018,"1,332 cc","44,182 km",Hatchback
+Porsche Boxster 2.9A PDK (COE till 06/2030),"$158,888","$23,720 /yr",11-Jun-2010,"2,893 cc",-,Sports
+Chevrolet Orlando 1.4A Turbo,"$34,888","$14,520 /yr",29-Jul-2015,"1,362 cc","95,000 km",MPV
+Honda Odyssey 2.4A EX-S 8-Seater,"$81,500","$20,090 /yr",27-Dec-2016,"2,356 cc","108,000 km",MPV
+Mazda 3 1.5A Deluxe Sunroof,"$40,800","$14,910 /yr",20-Jan-2016,"1,496 cc","96,000 km",Sedan
+Ssangyong Stavic 2.0A Diesel,"$48,800","$17,220 /yr",25-Sep-2015,"1,998 cc","110,000 km",MPV
+Subaru WRX STI 2.5M,"$100,800","$28,800 /yr",07-Sep-2016,"2,457 cc","52,000 km",Sports
+Kia Cerato K3 1.6A Sunroof,"$59,800","$14,120 /yr",29-May-2017,"1,591 cc",-,Sedan
+Toyota Hiace 3.0A DX,"$45,900","$23,900 /yr",01-Sep-2015,"2,982 cc",-,Van
+Toyota Corolla 1.3M (COE till 04/2029),"$39,900","$7,140 /yr",16-Sep-1992,"1,332 cc",-,Sedan
+Toyota Wish 1.8A Elegance,"$68,800","$17,410 /yr",15-Feb-2017,"1,798 cc","130,000 km",MPV
+Mazda 3 1.5A Sunroof,"$65,800","$13,170 /yr",13-Mar-2018,"1,496 cc","69,835 km",Sedan
+Honda Stream 1.8A RSZ Sunroof (COE till 02/2025),"$19,998","$14,660 /yr",10-Feb-2010,"1,799 cc","167,000 km",MPV
+Mercedes-Benz C-Class C180K (COE till 10/2031),"$94,800","$11,720 /yr",14-Dec-2011,"1,597 cc","141,000 km",Luxury
+Mercedes-Benz E-Class E250 Edition E Sunroof,"$93,800","$23,470 /yr",18-Apr-2016,"1,991 cc","91,800 km",Luxury
+Jaguar XE Diesel 2.0A Prestige,"$61,800","$18,270 /yr",24-Nov-2015,"1,999 cc","92,000 km",Luxury
+Mitsubishi Fuso Canter FEB21,"$52,800","$16,790 /yr",22-Nov-2016,"2,998 cc","138,308 km",Truck
+Hyundai Elantra 1.6A GLS Elite,"$74,800","$13,820 /yr",20-Aug-2018,"1,591 cc","92,154 km",Sedan
+Audi TT Coupe 2.0A TFSI S-tronic,"$178,800","$25,570 /yr",16-Aug-2019,"1,984 cc","50,000 km",Sports
+Toyota Corolla Altis 1.6A Elegance,"$87,800","$15,210 /yr",10-Oct-2018,"1,598 cc","84,000 km",Sedan
+Toyota Allion 1.5A (COE till 05/2024),"$8,900","$13,310 /yr",11-Aug-2009,"1,496 cc","167,000 km",Sedan
+Honda Vezel 1.5A X,"$50,998","$14,900 /yr",10-Oct-2016,"1,496 cc","102,000 km",SUV
+Toyota Dyna 150 3.0M (COE till 06/2028),"$49,800","$10,500 /yr",27-Jun-2008,"2,982 cc",-,Truck
+Mercedes-Benz A-Class A45 AMG 4MATIC (New 10-yr COE),"$225,000","$22,480 /yr",02-Jan-2014,"1,991 cc","96,000 km",Sports
+Subaru Exiga 2.0A (COE till 11/2028),"$62,998","$12,300 /yr",13-Nov-2008,"1,994 cc","115,000 km",MPV
+Volkswagen Jetta 1.4A TSI (COE till 05/2028),"$56,800","$12,190 /yr",28-May-2013,"1,390 cc","98,000 km",Sedan
+Skoda Superb 2.0A TSI Ambition,"$145,800","$17,600 /yr",25-Feb-2021,"1,984 cc","75,500 km",Luxury
+BMW 6 Series 640i Gran Coupe Individual Sunroof (COE till 07/2032),"$167,800","$18,980 /yr",28-Sep-2012,"2,979 cc","120,000 km",Luxury
+Honda Jazz 1.3A (COE till 05/2024),"$8,800","$13,330 /yr",29-May-2009,"1,339 cc","192,000 km",Hatchback
+BMW 2 Series 218i Gran Coupe Luxury,"$146,800","$17,980 /yr",30-Sep-2020,"1,499 cc","37,800 km",Luxury
+Volkswagen Scirocco 1.4A TSI (COE till 05/2029),"$67,800","$11,960 /yr",02-Oct-2009,"1,390 cc",-,Sports
+Mitsubishi Evolution 10 Final Edition,"$183,800","$54,760 /yr",23-Aug-2016,"1,998 cc","67,800 km",Sports
+Mercedes-Benz S-Class S500L Mild Hybrid AMG Line 4MATIC Premium Plus Executive,"$508,888","$45,720 /yr",23-Aug-2022,"2,999 cc","10,000 km",Luxury
+Lexus UX Hybrid UX250h Executive,"$169,800","$21,320 /yr",16-Oct-2020,"1,987 cc","35,650 km",SUV
+BMW 7 Series 730Li Sunroof,"$154,988","$26,840 /yr",29-Jun-2017,"1,998 cc","110,000 km",Luxury
+Toyota Vios 1.5A E (COE till 10/2029),"$61,800","$10,200 /yr",20-Oct-2009,"1,497 cc","149,000 km",Sedan
+Mazda 3 1.5A,"$80,000","$14,210 /yr",27-Sep-2018,"1,496 cc","46,331 km",Sedan
+Hyundai Elantra 1.6A GLS S,"$74,800","$13,670 /yr",04-Oct-2018,"1,591 cc","85,000 km",Sedan
+Nissan Qashqai 1.2A DIG-T Premium,"$51,800","$15,920 /yr",28-Jul-2016,"1,197 cc","92,000 km",SUV
+Toyota Vios 1.5A E,"$43,300","$13,730 /yr",27-May-2016,"1,497 cc","82,000 km",Sedan
+Honda Vezel 1.5A X Honda Sensing,"$71,800","$15,890 /yr",08-Nov-2017,"1,496 cc","69,000 km",SUV
+Toyota Dyna 150 3.0M,"$85,800","$15,730 /yr",14-Mar-2019,"2,982 cc","77,200 km",Truck
+Honda Vezel 1.5A X,"$44,388","$15,050 /yr",17-May-2016,"1,496 cc","86,500 km",SUV
+Kia Cerato 1.6A SX Sunroof,"$88,800","$14,500 /yr",25-Mar-2019,"1,591 cc","59,762 km",Sedan
+Toyota Harrier 2.0A Elegance Panoramic Roof,"$55,800","$22,490 /yr",10-Sep-2015,"1,986 cc","90,000 km",SUV
+Hyundai Kona Electric 39.2kWh Sunroof,"$133,800","$17,200 /yr",19-May-2021,-,"21,571 km",SUV
+Honda Civic 1.8A VTi-S (COE till 05/2026),"$38,800","$14,540 /yr",22-Aug-2006,"1,799 cc","166,860 km",Sedan
+Kia Cerato Forte Koup 1.6M SX Sunroof (COE till 02/2025),"$19,800","$14,120 /yr",24-Feb-2010,"1,591 cc","100,800 km",Sports
+Honda Freed Hybrid 1.5A G 7-Seater Honda Sensing,"$102,800","$19,130 /yr",24-Aug-2018,"1,496 cc","82,000 km",MPV
+BMW 4 Series 430i Convertible,"$119,800","$26,280 /yr",27-Feb-2017,"1,998 cc","96,000 km",Sports
+Honda Crossroad 1.8A (COE till 09/2028),"$72,800","$14,760 /yr",04-Sep-2008,"1,799 cc","150,000 km",SUV
+Honda Fit 1.3A G F-Package,"$77,800","$12,670 /yr",30-Aug-2019,"1,317 cc","55,000 km",Hatchback
+Toyota Corolla Altis 1.6A (COE till 04/2029),"$59,800","$10,700 /yr",16-Jul-2009,"1,598 cc","135,254 km",Sedan
+Mercedes-Benz E-Class E300 Avantgarde,"$209,800","$25,940 /yr",24-Mar-2020,"1,991 cc","21,900 km",Luxury
+Nissan Note 1.2A,"$65,800","$12,660 /yr",29-Sep-2018,"1,198 cc","75,780 km",Hatchback
+Citroen C3 Aircross 1.2A PureTech Shine,"$83,000","$13,670 /yr",25-Feb-2019,"1,199 cc","40,027 km",SUV
+Nissan X-Trail 2.0A Premium 7-Seater Sunroof,"$45,800","$19,930 /yr",23-Jun-2015,"1,997 cc","80,000 km",SUV
+Audi A3 Sportback 1.0A TFSI S-tronic,"$95,800","$16,490 /yr",14-Nov-2018,999 cc,"80,000 km",Hatchback
+Suzuki Jimny 1.5A GLX,"$129,800","$14,090 /yr",24-May-2022,"1,462 cc","15,000 km",SUV
+Toyota ProAce Compact Comfort 1.6M,"$43,800","$11,020 /yr",21-Sep-2017,"1,560 cc","140,000 km",Van
+Audi A3 Sportback 1.0A TFSI S-tronic,"$98,999","$15,590 /yr",29-Apr-2019,999 cc,"81,000 km",Hatchback
+Toyota Noah Hybrid 1.8A X,"$142,800","$22,840 /yr",03-May-2019,"1,797 cc","65,682 km",MPV
+Mazda 3 1.5A Sunroof,"$56,800","$14,150 /yr",01-Jun-2017,"1,496 cc","95,000 km",Sedan
+Subaru Forester 2.0i-L Sunroof,"$91,800","$15,710 /yr",28-Feb-2019,"1,995 cc","69,931 km",SUV
+Mercedes-Benz A-Class A180 Progressive,"$123,999","$19,280 /yr",12-Apr-2019,"1,332 cc","54,510 km",Hatchback
+Subaru Forester 2.0i-L Sunroof,"$77,000","$17,310 /yr",19-Oct-2017,"1,995 cc","48,300 km",SUV
+Subaru XV 1.6i-S,"$62,000","$15,960 /yr",25-Feb-2017,"1,600 cc","84,815 km",SUV
+Mercedes-Benz C-Class C180 Avantgarde,"$115,800","$21,790 /yr",18-Jan-2018,"1,595 cc","80,000 km",Luxury
+Nissan Qashqai 1.2A DIG-T Premium,"$39,800","$17,530 /yr",13-Aug-2015,"1,197 cc","69,000 km",SUV
+Mitsubishi Eclipse Cross 1.5A,"$85,800","$15,360 /yr",07-Aug-2018,"1,499 cc","109,000 km",SUV
+Hyundai Avante 1.6A S (COE till 03/2029),"$54,800","$9,960 /yr",30-Apr-2009,"1,591 cc",-,Sedan
+Mazda 3 Mild Hybrid 1.5A Astina,"$126,800","$14,890 /yr",15-Nov-2021,"1,496 cc","54,900 km",Sedan
+Audi Q3 1.4A TFSI S-tronic,"$152,800","$19,730 /yr",14-Sep-2020,"1,395 cc","42,882 km",SUV
+Subaru Forester 2.0A XT Sunroof,"$67,500","$17,930 /yr",16-Dec-2016,"1,998 cc",-,SUV
+Volkswagen Golf GTI 5DR (COE till 02/2029),"$76,800","$14,170 /yr",09-Apr-2009,"1,984 cc",-,Sports
+Nissan Qashqai 1.2A DIG-T Premium,"$55,800","$13,990 /yr",31-Mar-2017,"1,197 cc","75,000 km",SUV
+Honda Civic 1.5A VTEC Turbo,"$163,800","$15,660 /yr",20-Apr-2023,"1,498 cc","3,230 km",Sedan
