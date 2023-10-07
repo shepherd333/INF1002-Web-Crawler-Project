@@ -24,7 +24,7 @@ data['Depreciation']=data['Depreciation'].astype(float)
 data['Reg Date']=pd.to_datetime(data['Reg Date'],format='%d-%b-%Y', errors='coerce')
 
 # engine cap to int
-remove_eng=[',','c','c']
+remove_eng=[',','c']
 data['Eng Cap']=data['Eng Cap'].apply(lambda x: ''.join([e for e in x if e not in remove_eng]))
 data['Eng Cap']=data['Eng Cap'].astype(int)
 
