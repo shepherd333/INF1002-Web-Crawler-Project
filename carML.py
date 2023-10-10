@@ -12,12 +12,8 @@ from xgboost import XGBRegressor
 import pickle
 from datetime import datetime
 
-## Extracting name of files from directory
-files=[i for i in os.listdir() if 'csv' in i and 'unclean' not in i]
-print(files)
-## Creating dataframe by reading and appending csv
-cars=pd.concat([pd.read_csv(i) for i in files],ignore_index=True)
-cars.head()
+# read the cleaned data
+data = pd.read_csv("ProcessedData.csv")
 
 #columns for training data model
 #Model = str
