@@ -80,3 +80,23 @@ def generate_individual_urls(base_individual_url, listingid_array):
     individual_urls = [f"{base_individual_url}{listing_id}" for listing_id in listingid_array]
     return individual_urls
 
+import time
+
+
+def get_html_with_retry(url, max_retries=3):
+    retries = 0
+    while retries < max_retries:
+        try:
+            response = requests.get(url)
+            response.raise_for_status()
+            return response.text
+        except requests.exceptions.HTTPError as e:
+            if e.response.status_code == 503:
+                print(f"Service Unavailable, retrying in a moment... (Retry {retries + 1}/{max_retries})")
+                time.sleep(5)  # Wait for 5 seconds before retrying
+                retries += 1
+            else:
+                raise  # Re-raise other HTTP errors
+    raise CustomException("Max retries exceeded.")
+
+

@@ -1,7 +1,3 @@
-import requests
-from bs4 import BeautifulSoup
-
-
 # Retrieve into usable format for link
 def days_of_coe_retrieval(parsed_listing_url):
     try:
@@ -51,12 +47,3 @@ def yr_mm_dd_cleaner(str1):
     return days_of_coe_left
 
 
-listing_url = 'https://www.sgcarmart.com/used_cars/info.php?ID=1238173'
-listing_url2 = 'https://www.sgcarmart.com/used_cars/info.php?ID=1235109'
-response = requests.get(listing_url)
-response2 = requests.get(listing_url2)
-parsed_listing_url = BeautifulSoup(response.text, 'lxml')
-parsed_listing_url2 = BeautifulSoup(response2.text, 'lxml')
-
-print(days_of_coe_retrieval(parsed_listing_url))
-print(days_of_coe_retrieval(parsed_listing_url2))

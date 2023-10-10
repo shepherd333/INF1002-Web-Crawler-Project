@@ -1,6 +1,4 @@
 import numpy as np
-import requests
-from bs4 import BeautifulSoup
 
 def price_retrieval(parsed_listing_url):
     data_value = parsed_listing_url.find_all(class_='font_red')[0].text.strip()
@@ -24,13 +22,3 @@ def price_error_handling(data_value):
             price = np.nan  # Stores NA values as nan
 
     return price
-
-
-listing_url = 'https://www.sgcarmart.com/used_cars/info.php?ID=1238173'
-listing_url2 = 'https://www.sgcarmart.com/used_cars/info.php?ID=1235109'
-response = requests.get(listing_url)
-response2 = requests.get(listing_url2)
-parsed_listing_url = BeautifulSoup(response.text, 'lxml')
-parsed_listing_url2 = BeautifulSoup(response2.text, 'lxml')
-print(price_retrieval(parsed_listing_url))
-print(price_retrieval(parsed_listing_url2))

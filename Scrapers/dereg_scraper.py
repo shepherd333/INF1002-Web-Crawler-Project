@@ -1,6 +1,4 @@
-import requests
 import numpy as np
-from bs4 import BeautifulSoup
 
 
 # Write a function to retrieve dereg value from a parsed url
@@ -27,12 +25,3 @@ def dereg_value_error_handler(data_value):
 
         return dereg_value_from_scrape_date
 
-listing_url = 'https://www.sgcarmart.com/used_cars/info.php?ID=1238173'
-listing_url2 = 'https://www.sgcarmart.com/used_cars/info.php?ID=1235109'
-response = requests.get(listing_url)
-response2 = requests.get(listing_url2)
-parsed_listing_url = BeautifulSoup(response.text, 'lxml')
-parsed_listing_url2 = BeautifulSoup(response2.text, 'lxml')
-
-print(dereg_value_retrieval(parsed_listing_url))
-print(dereg_value_retrieval(parsed_listing_url2))

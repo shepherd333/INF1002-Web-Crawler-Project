@@ -1,4 +1,5 @@
 import pandas as pd
+from cleaner import clean_brand, clean_price, clean_depre, clean_roadtax, clean_coeLeft, clean_mileage, clean_manufacture_year, clean_transmission, clean_dereg, clean_omv, clean_arf, clean_coeprice, clean_enginecap, clean_power, clean_curbweight, clean_noOwners
 
 pd.set_option('display.max_columns', None)  # Display all columns
 pd.set_option('display.max_rows', None)  # Display all rows
@@ -28,23 +29,23 @@ def process_data(data):
     # Iterate through the data
     for item in data:
         # Append values to respective lists or use placeholder if value is missing
-        brand_list.append(item.get('brand', 'Not Available'))
-        price_list.append(item.get('price', 'Not Available'))
-        depre_list.append(item.get('depre', 'Not Available'))
-        roadtax_list.append(item.get('roadtax', 'Not Available'))
+        brand_list.append(clean_brand(item.get('brand', 'Not Available')))
+        price_list.append(clean_price(item.get('price', 'Not Available')))
+        depre_list.append(clean_depre(item.get('depre', 'Not Available')))
+        roadtax_list.append(clean_roadtax(item.get('roadtax', 'Not Available')))
         reg_date_list.append(item.get('reg_date', 'Not Available'))
-        coe_left_list.append(item.get('coeLeft', 'Not Available'))
-        mileage_list.append(item.get('mile', 'Not Available'))
-        manu_year_list.append(item.get('manuyear', 'Not Available'))
-        transmission_list.append(item.get('transmission', 'Not Available'))
-        deregistration_list.append(item.get('dereg', 'Not Available'))
-        omv_list.append(item.get('omv', 'Not Available'))
-        arf_list.append(item.get('arf', 'Not Available'))
-        coe_price_list.append(item.get('coeprice', 'Not Available'))
-        engine_cap_list.append(item.get('eng_cap', 'Not Available'))
-        power_list.append(item.get('power', 'Not Available'))
-        curb_weight_list.append(item.get('curb_weight', 'Not Available'))
-        owners_list.append(item.get('no_of_owners', 'Not Available'))
+        coe_left_list.append(clean_coeLeft(item.get('coeLeft', 'Not Available')))
+        mileage_list.append(clean_mileage(item.get('mile', 'Not Available')))
+        manu_year_list.append(clean_manufacture_year(item.get('manuyear', 'Not Available')))
+        transmission_list.append(clean_transmission(item.get('transmission', 'Not Available')))
+        deregistration_list.append(clean_dereg(item.get('dereg', 'Not Available')))
+        omv_list.append(clean_omv(item.get('omv', 'Not Available')))
+        arf_list.append(clean_arf(item.get('arf', 'Not Available')))
+        coe_price_list.append(clean_coeprice(item.get('coeprice', 'Not Available')))
+        engine_cap_list.append(clean_enginecap(item.get('eng_cap', 'Not Available')))
+        power_list.append(clean_power(item.get('power', 'Not Available')))
+        curb_weight_list.append(clean_curbweight(item.get('curb_weight', 'Not Available')))
+        owners_list.append(clean_noOwners(item.get('no_of_owners', 'Not Available')))
         vehicle_type_list.append(item.get('veh_type', 'Not Available'))
 
     # Create a DataFrame from the lists
@@ -70,6 +71,22 @@ def process_data(data):
     })
 
     return df
+
+
+def remove_na_rows(df):
+    try:
+        # Replace 'N/A' and 'nan' with NaN
+        df.replace(['N/A', 'nan'], pd.NA, inplace=True)
+
+        # Drop rows containing NaN values
+        df.dropna(inplace=True)
+
+        return df  # Return the cleaned DataFrame
+    except Exception as e:
+        print(f"An error occurred during data cleaning: {str(e)}")
+        return df  # Return the original DataFrame in case of an error
+
+
 
 def save_data_to_csv(df, filename):
     # Save the DataFrame to a CSV file

@@ -1,7 +1,4 @@
-# Write a function to retrieve the mileage in km from a listjng url
 import numpy as np
-import requests
-from bs4 import BeautifulSoup
 
 
 def mileage_error_handler(data_value):
@@ -23,15 +20,3 @@ def mileage_retrieval(parsed_listing_url):
     mileage_km = mileage_error_handler(data_value)
 
     return mileage_km
-
-
-listing_url = 'https://www.sgcarmart.com/used_cars/info.php?ID=1238173'
-response = requests.get(listing_url)
-parsed_listing_url = BeautifulSoup(response.text, 'lxml')
-
-listing_url2 = 'https://www.sgcarmart.com/used_cars/info.php?ID=1235109'
-response2 = requests.get(listing_url2)
-parsed_listing_url2 = BeautifulSoup(response2.text, 'lxml')
-
-print(mileage_retrieval(parsed_listing_url))
-print(mileage_retrieval(parsed_listing_url2))
