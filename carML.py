@@ -39,18 +39,7 @@ data_rm_brand.rename(columns={'Transmission': 'Transmission'}, inplace=True)
 #training model & testing samples
 train_x,test_x,train_y,test_y=train_test_split(data.drop('price',axis=1),data['price'],test_size=0.2,random_state=89)
 
-#choose the better out of the 2 ensemble algorithm for prediction regression-based task output
-#1. randomforestregressor 
-rfr=RandomForestRegressor(n_estimators=1000,max_depth=15)
-rfr.fit(train_x,train_y)
-predict=rfr.predict(test_x)
-print('MAE',mean_absolute_error(predict,test_y))
-print('R2',r2_score(predict,test_y))
-#expected example output (higher the score the better the accuracy)
-#MAE 1425.9924792171153
-#R2 0.9282483356510569
-
-#2. XGBRegressor 
+#XGBRegressor 
 xgr=XGBRegressor(n_estimators=1000,learning_rate=0.1,max_depth=5)
 xgr.fit(train_x,train_y)
 predict=xgr.predict(test_x)
