@@ -40,66 +40,82 @@ print(brand_dict)
 prices_dict={}
 for i,j in zip(data['Price'].unique().tolist(),range(1, data['Price'].nunique())):
     prices_dict[i]=float(j)
+print(prices_dict)
 
 depr_dict={}
 for i,j in zip(data['Depreciation'].unique().tolist(),range(1, data['Depreciation'].nunique())):
     depr_dict[i]=float(j)
+print(depr_dict)
 
 road_tax_dict={}
 for i,j in zip(data['Road Tax'].unique().tolist(),range(1, data['Road Tax'].nunique())):
     road_tax_dict[i]=float(j)
+print(road_tax_dict)
 
 reg_dict={}
 for i,j in zip(data['Registration Date'].unique().tolist(),range(1, data['Registration Date'].nunique())):
     reg_dict[i]=str(j)
+print(reg_dict)
 
 coe_left_dict={}
 for i,j in zip(data['COE Left'].unique().tolist(),range(1, data['COE Left'].nunique())):
    coe_left_dict[i]=float(j)
+print(coe_left_dict)
 
 mil_dict={}
 for i,j in zip(data['Mileage'].unique().tolist(),range(1, data['Mileage'].nunique())):
     mil_dict[i]=int(j)
+print(mil_dict)
 
 manufacture_dict={}
 for i,j in zip(data['Manufacture Year'].unique().tolist(),range(1, data['Manufacture Year'].nunique())):
     manufacture_dict[i]=str(j)
+print(manufacture_dict)
 
 trans_dict={}
 for i,j in zip(data['Transmission'].unique().tolist(),range(1, data['Transmission'].nunique())):
     trans_dict[i]=str(j)
+print(trans_dict)
 
 dereg_dict={}
 for i,j in zip(data['Deregistration'].unique().tolist(),range(1, data['Deregistration'].nunique())):
     dereg_dict[i]=int(j)
+print(dereg_dict)
 
 omv_dict={}
 for i,j in zip(data['OMV'].unique().tolist(),range(1, data['OMV'].nunique())):
     omv_dict[i]=int(j)
+print(omv_dict)
 
 arf_dict={}
 for i,j in zip(data['ARF'].unique().tolist(),range(1, data['ARF'].nunique())):
     arf_dict[i]=int(j)
+print(arf_dict)
 
 coe_price_dict={}
 for i,j in zip(data['COE Price'].unique().tolist(),range(1, data['COE Price'].nunique())):
     coe_price_dict[i]=float(j)
+print(coe_price_dict)
 
 eng_dict={}
 for i,j in zip(data['Engine Capacity'].unique().tolist(),range(1, data['Engine Capacity'].nunique())):
     eng_dict[i]=int(j)
+print(eng_dict)
 
 power_dict={}
 for i,j in zip(data['Power'].unique().tolist(),range(1, data['Power'].nunique())):
     power_dict[i]=float(j)
+print(power_dict)
 
 no_owners_dict={}
 for i,j in zip(data['No. Of Owners'].unique().tolist(),range(1, data['No. Of Owners'].nunique())):
     no_owners_dict[i]=int(j)
+print(no_owners_dict)
 
 vehicle_type_dict={}
 for i,j in zip(data['Vehicle Type'].unique().tolist(),range(1, data['Vehicle Type'].nunique())):
     vehicle_type_dict[i]=str(j)
+print(vehicle_type_dict)
 
 #training model & testing samples
 train_x,test_x,train_y,test_y=train_test_split(data.drop('Price',axis=1),data['Price'],test_size=0.2,random_state=89)
