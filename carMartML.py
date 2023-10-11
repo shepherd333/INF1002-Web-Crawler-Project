@@ -33,16 +33,16 @@ data = pd.read_csv("ProcessedData.csv")
 
 brand_dict={}
 for i,j in zip(data['Brand'].unique().tolist(),range(1, data['Brand'].nunique())):
-    brand_dict[j]=str(i)
+    brand_dict[i]=str(j)
 print(brand_dict)
 
 prices_dict={}
 for i,j in zip(data['Price'].unique().tolist(),range(1, data['Price'].nunique())):
-    prices_dict[j]=float(i)
+    prices_dict[i]=float(j)
 
 depr_dict={}
 for i,j in zip(data['Depreciation'].unique().tolist(),range(1, data['Depreciation'].nunique())):
-    depr_dict[j]=float(i)
+    depr_dict[i]=float(j)
 
 road_tax_dict={}
 for i,j in zip(data['Road Tax'].unique().tolist(),range(1, data['Road Tax'].nunique())):
