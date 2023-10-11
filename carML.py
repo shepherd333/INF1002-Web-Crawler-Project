@@ -63,4 +63,3 @@ print('R2',r2_score(predict,test_y))
 #save the model
 filename = 'trainedcarML.sav'
 pickle.dump(xgr, open(filename, 'wb'))
-f.close()
