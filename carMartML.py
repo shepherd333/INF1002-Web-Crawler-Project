@@ -33,6 +33,16 @@ data_rm_brand['Transmission'] = data_rm_brand['Transmission'].map(mapping_dict)
 # Optional: Rename the column to 'Transmission' if needed
 data_rm_brand.rename(columns={'Transmission': 'Transmission'}, inplace=True)
 
+#encode car types
+# Define a mapping dictionary
+mapping_dict2 = {'Hatchback': 0,'Mid-Sized Sedan': 1, 'MPV': 2, 'Luxury Sedan': 3, 'SUV': 4, 'Sports Car': 5}
+
+# Apply the mapping to the "Transmission" column
+data_rm_brand['Vehicle Type'] = data_rm_brand['Vehicle Type'].map(mapping_dict2)
+
+# Optional: Rename the column to 'Transmission' if needed
+data_rm_brand.rename(columns={'Vehicle Type': 'Vehicle Type'}, inplace=True)
+
 #training model & testing samples
 train_x,test_x,train_y,test_y=train_test_split(data.drop('Price',axis=1),data['Price'],test_size=0.2,random_state=89)
 
