@@ -37,7 +37,7 @@ data_rm_brand.rename(columns={'Transmission': 'Transmission'}, inplace=True)
 
 
 #training model & testing samples
-train_x,test_x,train_y,test_y=train_test_split(cars.drop('price',axis=1),cars['price'],test_size=0.2,random_state=89)
+train_x,test_x,train_y,test_y=train_test_split(data.drop('price',axis=1),data['price'],test_size=0.2,random_state=89)
 
 #choose the better out of the 2 ensemble algorithm for prediction regression-based task output
 #1. randomforestregressor 
