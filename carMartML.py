@@ -30,7 +30,7 @@ mapping_dict = {'Auto': 1, 'Manual': 0}
 # Apply the mapping to the "Transmission" column
 data_rm_brand['Transmission'] = data_rm_brand['Transmission'].map(mapping_dict)
 
-# Optional: Rename the column to 'Transmission' if needed
+#Rename the column to 'Transmission' to reflect encoding
 data_rm_brand.rename(columns={'Transmission': 'Transmission'}, inplace=True)
 
 #encode car types
