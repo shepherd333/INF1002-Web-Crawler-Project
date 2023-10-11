@@ -37,10 +37,10 @@ data_rm_brand.rename(columns={'Transmission': 'Transmission'}, inplace=True)
 # Define a mapping dictionary
 mapping_dict2 = {'Hatchback': 0,'Mid-Sized Sedan': 1, 'MPV': 2, 'Luxury Sedan': 3, 'SUV': 4, 'Sports Car': 5}
 
-# Apply the mapping to the "Transmission" column
+# Apply the mapping to the "Vehicle Type" column
 data_rm_brand['Vehicle Type'] = data_rm_brand['Vehicle Type'].map(mapping_dict2)
 
-# Optional: Rename the column to 'Transmission' if needed
+#Rename 'Vehicle Type' to reflect encoding
 data_rm_brand.rename(columns={'Vehicle Type': 'Vehicle Type'}, inplace=True)
 
 #training model & testing samples
