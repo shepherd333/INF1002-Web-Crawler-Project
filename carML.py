@@ -12,52 +12,29 @@ from xgboost import XGBRegressor
 import pickle
 from datetime import datetime
 
-## Extracting name of files from directory
-#files=[i for i in os.listdir() if 'csv' in i and 'unclean' not in i]
-#print(files)
-## Creating dataframe by reading and appending csv
-#cars=pd.concat([pd.read_csv(i) for i in files],ignore_index=True)
-#cars.head()
+# read the cleaned data
+data = pd.read_csv("ProcessedData.csv")
 
 # read the cleaned data
 data = pd.read_csv("ProcessedData.csv")
 
-#columns for training data model
-#Model = str
-#Prices = float
-#Depreciation = float
-#Registration Date = date
-#Engine Capacity = int(cc)
-#Mileage = int(km)
-#Vehicle Type = str
+#drop car brand names
+data_rm_brand = data.drop('Brand', axis=1)
 
-model_dict={}
-for i,j in zip(cars['model'].unique().tolist(),range(cars['model'].nunique())):
-    model_dict[i]=str(j)
+#change car Registration Dates str type to datetime type
+data_rm_brand['Registration Date'] = pd.to_datetime(data['Registration Date'])
+data_rm_brand['Registration Date'].dtypes
 
-prices_dict={}
-for i,j in zip(cars['prices'].unique().tolist(),range(cars['prices'].nunique())):
-    prices_dict[i]=float(j)
+#encode Transmission (Auto='1', Manual='0')
+#Define a mapping dictionary
+mapping_dict = {'Auto': 1, 'Manual': 0}
 
-depr_dict={}
-for i,j in zip(cars['depreciation'].unique().tolist(),range(cars['depreciation'].nunique())):
-    depr_dict[i]=float(j)
+# Apply the mapping to the "Transmission" column
+data_rm_brand['Transmission'] = data_rm_brand['Transmission'].map(mapping_dict)
 
-reg_dict={}
-for i,j in zip(cars['registration'].unique().tolist(),range(cars['registration'].nunique())):
-    reg_dict[i]=datetime(j)
+#Rename the column to 'Transmission' to reflect encoding
+data_rm_brand.rename(columns={'Transmission': 'Transmission'}, inplace=True)
 
-engine_dict={}
-for i,j in zip(cars['engine'].unique().tolist(),range(cars['engine'].nunique())):
-    engine_dict[i]=int(j)
-
-dist_dict={}
-for i,j in zip(cars['mileage'].unique().tolist(),range(cars['mileage'].nunique())):
-    dist_dict[i]=int(j)
-
-category_dict={}
-for i,j in zip(cars['type'].unique().tolist(),range(cars['type'].nunique())):
-    category_dict[i]=str(j)
 
 #training model & testing samples
 train_x,test_x,train_y,test_y=train_test_split(cars.drop('price',axis=1),cars['price'],test_size=0.2,random_state=89)
@@ -86,22 +63,4 @@ print('R2',r2_score(predict,test_y))
 #save the model
 filename = 'trainedcarML.sav'
 pickle.dump(xgr, open(filename, 'wb'))
-with open("model_dictionary.json",'w') as f:
-    json.dump(model_dict,f)
-f.close()
-with open("prices_dictionary.json",'w')as f:
-    json.dump(prices_dict,f)
-f.close()
-with open("depreciation_dictionary.json",'w') as f:
-    json.dump(depr_dict,f)
-f.close()
-with open("registration_dictionary.json",'w')as f:
-    json.dump(reg_dict,f)
-f.close()
-with open("engine_dictionary.json",'w')as f:
-    json.dump(engine_dict,f)
-with open("mileage_dictionary.json",'w')as f:
-    json.dump(dist_dict,f)
-with open("category_dictionary.json",'w')as f:
-    json.dump(category_dict,f)
 f.close()
