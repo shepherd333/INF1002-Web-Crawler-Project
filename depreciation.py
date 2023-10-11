@@ -6,8 +6,7 @@ import tkinter as tk
 from tkinter import simpledialog, messagebox
 
 # Data source (change if needed)
-#data = pd.read_csv(r"C:\Users\tohzh\PycharmProjects\INF1002-Web-Crawler-Project\newUsedCars_20sep.csv")
-data = pd.read_csv(r"C:\Users\tohzh\PycharmProjects\INF1002-Web-Crawler-Project\cleaned_7oct.csv")
+data = pd.read_csv(r"C:\Users\tohzh\PycharmProjects\INF1002-Web-Crawler-Project\ProcessedData.csv")
 
 def display_box_plot():
     # Create a tkinter window
@@ -16,7 +15,7 @@ def display_box_plot():
     root.geometry("300x300")
 
     # List of valid vehicle types
-    valid_vehicle_types = ['Sedan', 'Truck', 'SUV', 'Van', 'Sports', 'Luxury', 'MPV', 'Hatchback','Stationwagon']
+    valid_vehicle_types = ['Mid-Sized Sedan', 'SUV', 'Sports Car', 'Luxury Sedan', 'MPV', 'Hatchback','Stationwagon']
 
     # Create checkboxes for each vehicle type
     checkboxes = []
