@@ -41,7 +41,9 @@ data_rm_brand.rename(columns={'Vehicle Type': 'Vehicle Type'}, inplace=True)
 registration_date_datetime = pd.to_datetime(data_rm_brand['Registration Date'], format='%y-%m-%d')
 #Encode the registration date to an integer.
 encoded_registration_date = registration_date_datetime.dt.year * 10000 + registration_date_datetime.dt.month * 100 + registration_date_datetime.dt.day
+encoded_registration_date = encoded_registration_date.astype(int)
 
+#Data Visualization
 
 #Corr Matrix
 #data_rm_brand.corr()
@@ -83,12 +85,16 @@ sns.heatmap(data, mask=mask, annot=True, square=True, cmap=cmap , vmin=-1, vmax=
 bottom, top = ax.get_ylim()
 ax.set_ylim(bottom + 0.5, top - 0.5)
 
+#Optimising R^2 value
 #Performing a pairplot to visualize the data trends of the variables
 #Show corelation between 2 variables (eg Price VS Depreciation --> negative relationship? Why?)
 sns.pairplot(data_rm_brand);
+#Histograph of all Variables (Columns) in DataFrame
+fig, ax = plt.subplots(figsize=(15,15))
+pd.DataFrame.hist(data_rm_brand,ax=ax)
 
-# Slicing Data into Independent Variables (Features='features') and Dependent Variable (Target'y')
-features = data_rm_brand[['Price', 'Depreciation', 'Road Tax', 'Registration Date', 'COE Left',
+# Slicing Data into Independent Variables (Features'X') and Dependent Variable (Target'y')
+X = data_rm_brand[['Price', 'Depreciation', 'Road Tax', 'Registration Date', 'COE Left',
        'Mileage', 'Manufacture Year', 'Transmission', 'Deregistration', 'OMV',
        'ARF', 'COE Price', 'Engine Capacity', 'Power', 'Curb Weight',
        'No. Of Owners', 'Vehicle Type']].astype('category')
@@ -99,10 +105,6 @@ y= data_rm_brand['Price'].astype(float)
 #lsm = sm.OLS(y, features)
 #results = lsm.fit()
 #results.summary()
-
-#Histograph of all Variables (Columns) in DataFrame
-fig, ax = plt.subplots(figsize=(15,15))
-pd.DataFrame.hist(data_rm_brand,ax=ax)
 
 #BREAKPOINT HERE (until ready to test training)
 #training model & testing samples
