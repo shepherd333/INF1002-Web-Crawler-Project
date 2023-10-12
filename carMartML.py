@@ -87,6 +87,17 @@ ax.set_ylim(bottom + 0.5, top - 0.5)
 #Show corelation between 2 variables (eg Price VS Depreciation --> negative relationship? Why?)
 sns.pairplot(data_rm_brand);
 
+# Slicing Data into Independent Variables (Features='features') and Dependent Variable (Target'y')
+features = data_rm_brand[['Price', 'Depreciation', 'Road Tax', 'Registration Date', 'COE Left',
+       'Mileage', 'Manufacture Year', 'Transmission', 'Deregistration', 'OMV',
+       'ARF', 'COE Price', 'Engine Capacity', 'Power', 'Curb Weight',
+       'No. Of Owners', 'Vehicle Type']].astype('category')
+y= data_rm_brand['Price'].astype(float)
+
+#Histograph of all Variables (Columns) in DataFrame
+fig, ax = plt.subplots(figsize=(15,15))
+pd.DataFrame.hist(data_rm_brand,ax=ax)
+
 #BREAKPOINT HERE (until ready to test training)
 #training model & testing samples
 train_x,test_x,train_y,test_y=train_test_split(data.drop('Price',axis=1),data['Price'],test_size=0.2,random_state=89)
