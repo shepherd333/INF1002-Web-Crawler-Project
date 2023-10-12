@@ -119,5 +119,5 @@ print('R2',r2_score(predict,test_y))
 #R2 0.9394056654633186
 
 #save the model
-filename = 'trainedcarML.sav'
-pickle.dump(xgr, open(filename, 'wb'))
+#filename = 'trainedcarML.sav'
+#pickle.dump(xgr, open(filename, 'wb'))
