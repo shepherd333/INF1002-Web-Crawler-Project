@@ -46,32 +46,13 @@ encoded_registration_date = encoded_registration_date.astype(int)
 #Data Visualization
 
 #Corr Matrix
-#data_rm_brand.corr()
+data_rm_brand.corr()
 #How each feature relates to price
-#data_rm_brand.corr()['Price'].sort_values(ascending=False)
+data_rm_brand.corr()['Price'].sort_values(ascending=False)
 #Corr Matrix Heatmap Visualization
-#sns.set(style="white")
-#Generate a mask for the upper triangle
-#mask = np.zeros_like(data_rm_brand.corr(), dtype=np.bool_)
-#mask[np.triu_indices_from(mask)] = True
-#Set up the matplotlib figure to control size of heatmap
-#fig, ax = plt.subplots(figsize=(15,15))
-#Create a custom color palette
-#cmap = \
-#sns.diverging_palette(133, 10, as_cmap=True)  # as_cmap returns a matplotlib colormap object rather than a list of colors
-#Green = Good (low correlation), Red = Bad (high correlation) between the independent variables
-#Plot the heatmap
-#sns.heatmap(data_rm_brand.corr(), mask=mask, annot=True, square=True, cmap=cmap , vmin=-1, vmax=1,ax=ax);
-# Prevent Heatmap Cut-Off Issue
-#bottom, top = ax.get_ylim()
-#ax.set_ylim(bottom + 0.5, top - 0.5)
-
-#Corr Matrix v2.0
 sns.set(style="white")
-# Creating the data
-data = data_rm_brand.corr()
 #Generate a mask for the upper triangle
-mask = np.zeros_like(data, dtype=np.bool_)
+mask = np.zeros_like(data_rm_brand.corr(), dtype=np.bool_)
 mask[np.triu_indices_from(mask)] = True
 #Set up the matplotlib figure to control size of heatmap
 fig, ax = plt.subplots(figsize=(15,15))
@@ -80,8 +61,32 @@ cmap = \
 sns.diverging_palette(133, 10, as_cmap=True)  # as_cmap returns a matplotlib colormap object rather than a list of colors
 #Green = Good (low correlation), Red = Bad (high correlation) between the independent variables
 #Plot the heatmap
+sns.heatmap(data_rm_brand.corr(), mask=mask, annot=True, square=True, cmap=cmap , vmin=-1, vmax=1,ax=ax);
+# Prevent Heatmap Cut-Off Issue
+bottom, top = ax.get_ylim()
+ax.set_ylim(bottom + 0.5, top - 0.5)
+
+#drop high-corelation variables
+data_rm_brand.drop(['Depreciation','Registration Date','Manufacture Year','ARF','Road Tax'],axis=1,inplace=True)
+remaining_columns = data_rm_brand.columns
+print(remaining_columns)
+
+# Re-visualizing the correlation matrix
+sns.set(style="white")
+# Creating the data
+data = data_rm_brand.corr()
+# Generate a mask for the upper triangle
+mask = np.zeros_like(data, dtype=np.bool_)
+mask[np.triu_indices_from(mask)] = True
+# Set up the matplotlib figure to control size of heatmap
+fig, ax = plt.subplots(figsize=(15,15))
+# Create a custom color palette
+cmap = \
+sns.diverging_palette(133, 10, as_cmap=True)  # as_cmap returns a matplotlib colormap object rather than a list of colors
+# Green = Good (low correlation), Red = Bad (high correlation) between the independent variables
+# Plot the heatmap
 sns.heatmap(data, mask=mask, annot=True, square=True, cmap=cmap , vmin=-1, vmax=1,ax=ax);
-#Prevent Heatmap Cut-Off Issue
+# Prevent Heatmap Cut-Off Issue
 bottom, top = ax.get_ylim()
 ax.set_ylim(bottom + 0.5, top - 0.5)
 
