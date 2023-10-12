@@ -94,6 +94,12 @@ features = data_rm_brand[['Price', 'Depreciation', 'Road Tax', 'Registration Dat
        'No. Of Owners', 'Vehicle Type']].astype('category')
 y= data_rm_brand['Price'].astype(float)
 
+# model / fit / summarize
+#import statsmodels.api as sm
+#lsm = sm.OLS(y, features)
+#results = lsm.fit()
+#results.summary()
+
 #Histograph of all Variables (Columns) in DataFrame
 fig, ax = plt.subplots(figsize=(15,15))
 pd.DataFrame.hist(data_rm_brand,ax=ax)
