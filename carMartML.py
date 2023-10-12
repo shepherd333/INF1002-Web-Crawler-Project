@@ -36,6 +36,7 @@ mapping_dict2 = {'Hatchback': 0,'Mid-Sized Sedan': 1, 'MPV': 2, 'Luxury Sedan': 
 data_rm_brand['Vehicle Type'] = data_rm_brand['Vehicle Type'].map(mapping_dict2)
 #Rename 'Vehicle Type' to reflect encoding
 data_rm_brand.rename(columns={'Vehicle Type': 'Vehicle Type'}, inplace=True)
+data_rm_brand.head()
 
 #Covert registration date format to encode
 registration_date_datetime = pd.to_datetime(data_rm_brand['Registration Date'], format='%y-%m-%d')
@@ -49,6 +50,7 @@ encoded_registration_date = encoded_registration_date.astype(int)
 data_rm_brand.corr()
 #How each feature relates to price
 data_rm_brand.corr()['Price'].sort_values(ascending=False)
+
 #Corr Matrix Heatmap Visualization
 sns.set(style="white")
 #Generate a mask for the upper triangle
@@ -67,7 +69,7 @@ bottom, top = ax.get_ylim()
 ax.set_ylim(bottom + 0.5, top - 0.5)
 
 #drop high-corelation variables
-data_rm_brand.drop(['Depreciation','Registration Date','Manufacture Year','ARF','Road Tax'],axis=1,inplace=True)
+data_rm_brand.drop(['Depreciation','Registration Date','Manufacture Year','ARF','Engine Capacity','Power'],axis=1,inplace=True)
 remaining_columns = data_rm_brand.columns
 print(remaining_columns)
 
@@ -92,11 +94,8 @@ ax.set_ylim(bottom + 0.5, top - 0.5)
 
 #Optimising R^2 value
 #Performing a pairplot to visualize the data trends of the variables
-#Show corelation between 2 variables (eg Price VS Depreciation --> negative relationship? Why?)
+#after dropping 'Depreciation','Registration Date','Manufacture Year','ARF','Engine Capacity','Power'
 sns.pairplot(data_rm_brand);
-#Histograph of all Variables (Columns) in DataFrame
-fig, ax = plt.subplots(figsize=(15,15))
-pd.DataFrame.hist(data_rm_brand,ax=ax)
 
 # Slicing Data into Independent Variables (Features'X') and Dependent Variable (Target'y')
 X = data_rm_brand[['Price', 'Depreciation', 'Road Tax', 'Registration Date', 'COE Left',
