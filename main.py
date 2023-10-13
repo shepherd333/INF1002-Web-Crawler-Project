@@ -30,11 +30,11 @@ def main():
 
     # Step 4: Process and save the data
     print("Before process_data: ", data)
-    processed_data = process_data(data)
+    processed_data = process_data(data, individual_urls, listingid_array)
     print("After process_data: ", processed_data)
     processed_data = remove_na_rows(processed_data)
     print("After remove_na_rows: ", processed_data)
-    save_data_to_csv(processed_data, 'ProcessedData.csv')
+    save_data_to_csv(processed_data, 'ProcessedData_.csv')
 
 
 if __name__ == "__main__":

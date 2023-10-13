@@ -14,8 +14,8 @@ def engine_capacity_error_handler(data_value):
     return desired_value
 
 
-def engine_capacity_retrieval(parsed_listing_url):
-    data_value = parsed_listing_url.find_all(class_='row_info')[4].text.strip().split('cc')
+def engine_capacity_retrieval(listing_url):
+    data_value = listing_url.find_all(class_='row_info')[4].text.strip().split('cc')
     engine_capacity = engine_capacity_error_handler(data_value)
     return engine_capacity
 

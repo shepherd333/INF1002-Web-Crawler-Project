@@ -1,9 +1,9 @@
-def brand_retrieval(parsed_url):
-    if not parsed_url:
+def brand_retrieval(url):
+    if not url:
         raise ValueError("Failed to retrieve data")
 
     # Locate the <a> element with the specified class
-    brand = parsed_url.find('a', class_='nounderline globaltitle')
+    brand = url.find('a', class_='nounderline globaltitle')
     if brand:
         brand = brand.text.split()[0]
         return brand

@@ -77,8 +77,12 @@ def extract_listingid(baseurl, num_pages):
 
 
 def generate_individual_urls(base_individual_url, listingid_array):
-    individual_urls = [f"{base_individual_url}{listing_id}" for listing_id in listingid_array]
+    individual_urls = []
+    for listing_id in listingid_array:
+        individual_url = f"{base_individual_url}{listing_id}"
+        individual_urls.append(individual_url)
     return individual_urls
+
 
 import time
 

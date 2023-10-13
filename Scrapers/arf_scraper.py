@@ -1,7 +1,6 @@
 import numpy as np
 
 
-# Write a function that retrieves ARF based on a parsed listing url
 def error_handler(data_value):
     if len(data_value) < 2:  # deals with ['NA'] input
         desired_value = np.nan
@@ -14,9 +13,9 @@ def error_handler(data_value):
             desired_value = int(data_value[1])
     return desired_value
 
-
-def arf_retrieval(parsed_listing_url):
-    data_value = parsed_listing_url.find_all(class_='row_info')[9].text.split('$')
+# Retrieve ARF based on parsed listing url
+def arf_retrieval(listing_url):
+    data_value = listing_url.find_all(class_='row_info')[9].text.split('$')
     arf = error_handler(data_value)
     return arf
 

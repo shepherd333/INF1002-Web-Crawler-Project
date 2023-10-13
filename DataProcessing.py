@@ -5,7 +5,7 @@ pd.set_option('display.max_columns', None)  # Display all columns
 pd.set_option('display.max_rows', None)  # Display all rows
 
 
-def process_data(data):
+def process_data(data, listing_url, listingid_array):
     # Create lists to store data for each column
     brand_list = []
     price_list = []
@@ -50,6 +50,8 @@ def process_data(data):
 
     # Create a DataFrame from the lists
     df = pd.DataFrame({
+        'Listing ID': listingid_array,
+        'Listing URL': listing_url,
         'Brand': brand_list,
         'Price': price_list,
         'Depreciation': depre_list,

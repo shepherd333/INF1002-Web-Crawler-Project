@@ -1,11 +1,11 @@
 # Retrieve into usable format for link
-def days_of_coe_retrieval(parsed_listing_url):
+def days_of_coe_retrieval(listing_url):
     try:
-        if not parsed_listing_url:
+        if not listing_url:
             print("failed to retrieve data")
             return None
 
-        rows = parsed_listing_url.find_all(class_='row_bg')
+        rows = listing_url.find_all(class_='row_bg')
 
         if len(rows) >= 2:
             td_elements = rows[1].find_all('td')
@@ -23,27 +23,19 @@ def days_of_coe_retrieval(parsed_listing_url):
 
 
 # Define a function to calculate days of COE left
-def yr_mm_dd_cleaner(str1):
-    # Convert days_of_coe_left_yy_mm_dd to days
-    year_index = str1.find('yr')
-    if year_index == -1:
-        year = 0
-    else:
-        year = int(str1[year_index - 1])
+def yr_mm_dd_cleaner(str_coeleft):
+    def extract_value(substring):
+        index = str_coeleft.find(substring)
+        if index != -1:
+            return int(str_coeleft[index - 1])
+        return 0
 
-    mth_index = str1.find('mth')
-    if mth_index == -1:
-        mth = 0
-    else:
-        mth = int(str1[mth_index - 1])
+    year = extract_value('yr')
+    month = extract_value('mth')
+    day = extract_value('day')
 
-    day_index = str1.find('day')
-    if day_index == -1:
-        day = 0
-    else:
-        day = int(str1[day_index - 1])
-
-    days_of_coe_left = (year * 365) + (mth * 30) + day
+    days_of_coe_left = (year * 365) + (month * 30) + day
     return days_of_coe_left
+
 
 

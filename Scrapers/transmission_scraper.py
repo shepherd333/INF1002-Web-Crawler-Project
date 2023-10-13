@@ -1,10 +1,15 @@
+import numpy as np
 
-def transmission_retrieval(parsed_listing_url):
+
+def transmission_error_handler(transmission):
+    if transmission:
+        return transmission.strip()
+    return np.nan
+
+
+def transmission_retrieval(listing_url):
     try:
-        transmission = parsed_listing_url.find_all(class_='row_info')[7].text
-        return transmission.strip()  # Remove extra spaces and return the transmission info
-
+        transmission = listing_url.find_all(class_='row_info')[7].text
+        return transmission_error_handler(transmission)
     except (IndexError, AttributeError):
-        return "Transmission info N/A"  # Return a default value if data is not found or cannot be parsed
-
-
+        return np.nan

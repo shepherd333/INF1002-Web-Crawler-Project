@@ -14,8 +14,8 @@ def mileage_error_handler(data_value):
     return mileage_km
 
 
-def mileage_retrieval(parsed_listing_url):
-    data_value = parsed_listing_url.find_all(class_='row_info')[0].text.strip()
+def mileage_retrieval(listing_url):
+    data_value = listing_url.find_all(class_='row_info')[0].text.strip()
     data_value = data_value.split('km')
     mileage_km = mileage_error_handler(data_value)
 
