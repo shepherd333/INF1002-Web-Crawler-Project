@@ -2,12 +2,13 @@ import pandas as pd
 import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.feature_selection import SelectKBest,f_regression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import mean_absolute_error,r2_score
+from sklearn.feature_selection import RFE
+from sklearn.linear_model import LinearRegression
 from sklearn.ensemble import RandomForestRegressor
 from xgboost import XGBRegressor
+import xgboost as xgb
 import pickle
 from datetime import datetime
 
@@ -31,99 +32,228 @@ data_rm_brand.rename(columns={'Transmission': 'Transmission'}, inplace=True)
 
 #encode car types
 # Define a mapping dictionary
-mapping_dict2 = {'Hatchback': 0,'Mid-Sized Sedan': 1, 'MPV': 2, 'Luxury Sedan': 3, 'SUV': 4, 'Sports Car': 5}
+mapping_dict2 = {'Hatchback': 1,'Mid-Sized Sedan': 2, 'MPV': 3, 'Luxury Sedan': 4, 'SUV': 5, 'Sports Car': 6, 'Stationwagon': 7}
 # Apply the mapping to the "Vehicle Type" column
 data_rm_brand['Vehicle Type'] = data_rm_brand['Vehicle Type'].map(mapping_dict2)
 #Rename 'Vehicle Type' to reflect encoding
 data_rm_brand.rename(columns={'Vehicle Type': 'Vehicle Type'}, inplace=True)
-data_rm_brand.head()
+#data_rm_brand.head()
 
 #Covert registration date format to encode
 registration_date_datetime = pd.to_datetime(data_rm_brand['Registration Date'], format='%y-%m-%d')
 #Encode the registration date to an integer.
 encoded_registration_date = registration_date_datetime.dt.year * 10000 + registration_date_datetime.dt.month * 100 + registration_date_datetime.dt.day
+#print(encoded_registration_date)
 encoded_registration_date = encoded_registration_date.astype(int)
 
-#Data Visualization
+#start of Data Visualization
 
 #Corr Matrix
-data_rm_brand.corr()
+#data_rm_brand.corr()
 #How each feature relates to price
-data_rm_brand.corr()['Price'].sort_values(ascending=False)
-
+#data_rm_brand.corr()['Price'].sort_values(ascending=False)
 #Corr Matrix Heatmap Visualization
-sns.set(style="white")
+#sns.set(style="white")
 #Generate a mask for the upper triangle
-mask = np.zeros_like(data_rm_brand.corr(), dtype=np.bool_)
-mask[np.triu_indices_from(mask)] = True
+#mask = np.zeros_like(data_rm_brand.corr(), dtype=np.bool_)
+#mask[np.triu_indices_from(mask)] = True
 #Set up the matplotlib figure to control size of heatmap
-fig, ax = plt.subplots(figsize=(15,15))
+#fig, ax = plt.subplots(figsize=(15,15))
 #Create a custom color palette
-cmap = \
-sns.diverging_palette(133, 10, as_cmap=True)  # as_cmap returns a matplotlib colormap object rather than a list of colors
+#cmap = \
+#sns.diverging_palette(133, 10, as_cmap=True)  # as_cmap returns a matplotlib colormap object rather than a list of colors
 #Green = Good (low correlation), Red = Bad (high correlation) between the independent variables
 #Plot the heatmap
-sns.heatmap(data_rm_brand.corr(), mask=mask, annot=True, square=True, cmap=cmap , vmin=-1, vmax=1,ax=ax);
+#sns.heatmap(data_rm_brand.corr(), mask=mask, annot=True, square=True, cmap=cmap , vmin=-1, vmax=1,ax=ax);
 # Prevent Heatmap Cut-Off Issue
-bottom, top = ax.get_ylim()
-ax.set_ylim(bottom + 0.5, top - 0.5)
-
+#bottom, top = ax.get_ylim()
+#ax.set_ylim(bottom + 0.5, top - 0.5)
 #drop high-corelation variables
 data_rm_brand.drop(['Depreciation','Registration Date','Manufacture Year','ARF','Engine Capacity','Power'],axis=1,inplace=True)
 remaining_columns = data_rm_brand.columns
-print(remaining_columns)
+#print(remaining_columns)
+data_rm_brand.to_csv('remaining_columns.csv', index=False, columns=remaining_columns)
 
-# Re-visualizing the correlation matrix
-sns.set(style="white")
+#Our chosen dropped high-corelation variables assessed by ML model
+# Assuming X is your feature data and y is your target variable
+data_rm_brand = pd.read_csv('remaining_columns.csv')
+# Split the data into input features (X) and target variable (y)
+X = data_rm_brand
+y = data_rm_brand['Price']
+# RFE for XGBoost
+xgb_model = XGBRegressor()
+rfe_xgb = RFE(estimator=xgb_model, n_features_to_select=10)  # Adjust the number of features to select as needed
+rfe_xgb.fit(X, y)
+selected_features_xgb = X.columns[rfe_xgb.support_]
+# RFE for Linear Regression
+lr_model = LinearRegression()
+rfe_lr = RFE(estimator=lr_model, n_features_to_select=10)  # Adjust the number of features to select as needed
+rfe_lr.fit(X, y)
+selected_features_lr = X.columns[rfe_lr.support_]
+# RFE for RandomForest
+rf_model = RandomForestRegressor()
+rfe_rf = RFE(estimator=rf_model, n_features_to_select=10)  # Adjust the number of features to select as needed
+rfe_rf.fit(X, y)
+selected_features_rf = X.columns[rfe_rf.support_]
+# Combine selected features from all models (intersection)
+selected_features = list(set(selected_features_xgb) & set(selected_features_lr) & set(selected_features_rf))
+# Create a new dataset with selected features by ML model
+selected_X = X[selected_features]
+selected_X.to_csv('MLselected_columns.csv', index=False, columns=selected_X)
+
+# Re-visualizing the correlation matrix with ML selected variables
+#sns.set(style="white")
 # Creating the data
-data = data_rm_brand.corr()
+#data = selected_X.corr()
 # Generate a mask for the upper triangle
-mask = np.zeros_like(data, dtype=np.bool_)
-mask[np.triu_indices_from(mask)] = True
+#mask = np.zeros_like(data, dtype=np.bool_)
+#mask[np.triu_indices_from(mask)] = True
 # Set up the matplotlib figure to control size of heatmap
-fig, ax = plt.subplots(figsize=(15,15))
+#fig, ax = plt.subplots(figsize=(15,15))
 # Create a custom color palette
-cmap = \
-sns.diverging_palette(133, 10, as_cmap=True)  # as_cmap returns a matplotlib colormap object rather than a list of colors
+#cmap = \
+#sns.diverging_palette(133, 10, as_cmap=True)  # as_cmap returns a matplotlib colormap object rather than a list of colors
 # Green = Good (low correlation), Red = Bad (high correlation) between the independent variables
 # Plot the heatmap
-sns.heatmap(data, mask=mask, annot=True, square=True, cmap=cmap , vmin=-1, vmax=1,ax=ax);
+#sns.heatmap(data, mask=mask, annot=True, square=True, cmap=cmap , vmin=-1, vmax=1,ax=ax);
 # Prevent Heatmap Cut-Off Issue
-bottom, top = ax.get_ylim()
-ax.set_ylim(bottom + 0.5, top - 0.5)
+#bottom, top = ax.get_ylim()
+#ax.set_ylim(bottom + 0.5, top - 0.5)
+# ML selected variables
+#sns.pairplot(selected_X);
 
-#Optimising R^2 value
-#Performing a pairplot to visualize the data trends of the variables
-#after dropping 'Depreciation','Registration Date','Manufacture Year','ARF','Engine Capacity','Power'
-sns.pairplot(data_rm_brand);
+#Histograms plot with ML selected variables
+#fig, ax = plt.subplots(figsize=(15,15))
+#pd.DataFrame.hist(selected_X,ax=ax)
 
-# Slicing Data into Independent Variables (Features'X') and Dependent Variable (Target'y')
-X = data_rm_brand[['Price', 'Depreciation', 'Road Tax', 'Registration Date', 'COE Left',
-       'Mileage', 'Manufacture Year', 'Transmission', 'Deregistration', 'OMV',
-       'ARF', 'COE Price', 'Engine Capacity', 'Power', 'Curb Weight',
-       'No. Of Owners', 'Vehicle Type']].astype('category')
-y= data_rm_brand['Price'].astype(float)
+#chosen 5 of the ML selected variables for logging (OMV,Curb Weight, Road Tax, COE Price and Deregisteration)
+data_rm_brand_only_OMV_logged = data_rm_brand.copy()
+data_rm_brand_only_OMV_logged['OMV'] = np.log(data_rm_brand_only_OMV_logged['OMV'])
+data_rm_brand_only_OMV_logged.head()
+data_rm_brand_only_OMV_logged.to_csv('OMV_columns.csv', index=False, columns=remaining_columns)
 
-# model / fit / summarize
-#import statsmodels.api as sm
-#lsm = sm.OLS(y, features)
-#results = lsm.fit()
-#results.summary()
+data_rm_brand_only_curbweight_logged = data_rm_brand.copy()
+data_rm_brand_only_curbweight_logged['Curb Weight'] = np.log(data_rm_brand_only_curbweight_logged['Curb Weight'])
+data_rm_brand_only_curbweight_logged.head()
+data_rm_brand_only_curbweight_logged.to_csv('Curb_Weight_columns.csv', index=False, columns=remaining_columns)
 
-#BREAKPOINT HERE (until ready to test training)
-#training model & testing samples
-train_x,test_x,train_y,test_y=train_test_split(data.drop('Price',axis=1),data['Price'],test_size=0.2,random_state=89)
+data_rm_brand_only_roadtax_logged = data_rm_brand.copy()
+data_rm_brand_only_roadtax_logged['Road Tax'] = np.log(data_rm_brand_only_roadtax_logged['Road Tax'])
+data_rm_brand_only_roadtax_logged.head()
+data_rm_brand_only_roadtax_logged.to_csv('Road_Tax_columns.csv', index=False, columns=remaining_columns)
 
-#XGBRegressor
-xgr=XGBRegressor(n_estimators=1000,learning_rate=0.1,max_depth=5)
-xgr.fit(train_x,train_y)
-predict=xgr.predict(test_x)
-print('MAE',mean_absolute_error(predict,test_y))
-print('R2',r2_score(predict,test_y))
-#expected example output (higher the score the better the accuracy)
-#MAE 1322.161939034648
-#R2 0.9394056654633186
+data_rm_brand_only_COE_logged = data_rm_brand.copy()
+data_rm_brand_only_COE_logged['COE Price'] = np.log(data_rm_brand_only_COE_logged['COE Price'])
+data_rm_brand_only_COE_logged.head()
+data_rm_brand_only_COE_logged.to_csv('COE_Price_columns.csv', index=False, columns=remaining_columns)
 
-#save the model
-#filename = 'trainedcarML.sav'
-#pickle.dump(xgr, open(filename, 'wb'))
+data_rm_brand_only_deregisteration_logged = data_rm_brand.copy()
+data_rm_brand_only_deregisteration_logged['Deregisteration'] = np.log(data_rm_brand_only_deregisteration_logged['Deregistration'])
+data_rm_brand_only_deregisteration_logged.head()
+data_rm_brand_only_deregisteration_logged.to_csv('Deregisteration_columns.csv', index=False, columns=remaining_columns)
+
+# Before and After logging Histogram comparisons
+# Logged Histogram
+#data_rm_brand_only_OMV_logged = pd.read_csv('OMV_columns.csv')
+#data_rm_brand_only_curbweight_logged = pd.read_csv('Curb_Weight_columns.csv')
+#data_rm_brand_only_roadtax_logged = pd.read_csv('Road_Tax_columns.csv')
+#data_rm_brand_only_COE_logged = pd.read_csv('COE_Price_columns.csv')
+#data_rm_brand_only_deregisteration_logged = pd.read_csv('Deregisteration_columns.csv')
+# **Log-transform the data**
+#logged_data = {}
+#for column in ['OMV', 'Curb Weight', 'Road Tax', 'COE Price', 'Deregistration']:
+#    logged_data[column] = np.log(data_rm_brand_only_OMV_logged[column])
+# Create a figure and axes object
+#fig, axs = plt.subplots(5, 2, figsize=(15,15))
+# Plot the histograms 
+#axs[0, 0].hist(data_rm_brand_only_OMV_logged['OMV'], label='OMV (Original)')
+#axs[0, 1].hist(logged_data['OMV'], label='OMV (Logged)')
+#axs[1, 0].hist(data_rm_brand_only_curbweight_logged['Curb Weight'], label='Curb Weight (Original)')
+#axs[1, 1].hist(logged_data['Curb Weight'], label='Curb Weight (Logged)')
+#axs[2, 0].hist(data_rm_brand_only_roadtax_logged['Road Tax'], label='Road Tax (Original)')
+#axs[2, 1].hist(logged_data['Road Tax'], label='Road Tax (Logged)')
+#axs[3, 0].hist(data_rm_brand_only_COE_logged['COE Price'], label='COE Price (Original)')
+#axs[3, 1].hist(logged_data['COE Price'], label='COE Price (Logged)')
+#axs[4, 0].hist(data_rm_brand_only_deregisteration_logged['Deregistration'], label='Deregistration (Original)')
+#axs[4, 1].hist(logged_data['Deregistration'], label='Deregistration (Logged)')
+# Add titles and labels
+#plt.suptitle('Distribution of Vehicle Features (Original vs. Logged)')
+#for ax in axs.ravel():
+#    ax.set_xlabel(ax.get_title())
+#    ax.set_ylabel('Count')
+#    ax.legend()
+# Show the plot
+#plt.show()
+
+# end of Data Visualization
+
+# merge loggings for training datasets
+# Read the two CSV files into Pandas DataFrames
+df1 = pd.read_csv('OMV_columns.csv')
+df2 = pd.read_csv('Curb_Weight_columns.csv')
+# Merge the two DataFrames into a single DataFrame
+df = pd.concat([df1, df2], ignore_index=True)
+# Save the merged DataFrame to a new CSV file
+df.to_csv('merged_logging.csv', index=False)
+
+# Read the two CSV files into Pandas DataFrames
+df3 = pd.read_csv('Road_Tax_columns.csv')
+# Merge the two DataFrames into a single DataFrame
+df = pd.concat([df1, df2, df3], ignore_index=True)
+# Save the merged DataFrame to a new CSV file
+df.to_csv('merged_logging2.csv', index=False)
+
+# Read the two CSV files into Pandas DataFrames
+df4 = pd.read_csv('COE_Price_columns.csv')
+# Merge the two DataFrames into a single DataFrame
+df = pd.concat([df1, df2, df3, df4], ignore_index=True)
+# Save the merged DataFrame to a new CSV file
+df.to_csv('merged_logging3.csv', index=False)
+
+# Read the two CSV files into Pandas DataFrames
+df5 = pd.read_csv('Deregisteration_columns.csv')
+# Merge the two DataFrames into a single DataFrame
+df = pd.concat([df1, df2, df3, df4, df5], ignore_index=True)
+# Save the merged DataFrame to a new CSV file
+df.to_csv('merged_logging4.csv', index=False)
+
+#Use the merged logging files to decide which training model to use based on the r2 scores
+# LinearRegression R2 scores
+# 0.45677199005109426 0.34060893342441134 0.4409196887381531 0.43707563329910004
+# XGBRegressor R2 scores
+# 0.9472150062225692 0.9580033607688891 0.9684520170458867 0.980124193035333
+# RandomForrest R2 scores
+# 0.9246515428125204 0.911425999608523 0.9633376982210334 0.9805476278069856
+
+#Cross-Validation of R2 scores
+#XGBRegressor Cross-Validation R2 scores: [0.82094687 0.94073907 0.96631028 0.87726598 0.99510782]
+#LinearRegression Cross-Validation R2 scores: [ 0.39872625 -0.432792    0.38508226  0.44163474  0.4213059 ]
+#RandomForestRegressor Cross-Validation R2 scores: [0.82048568 0.93294035 0.95808244 0.92102779 0.99919516]
+#XGBRegressor Mean R2: 0.9200740047505638
+#XGBRegressor Standard Deviation of R2: 0.06301369246296862
+#LinearRegression Mean R2: 0.24279143204865533
+#LinearRegression Standard Deviation of R2: 0.338343434947679
+#RandomForestRegressor Mean R2: 0.926346282315572
+#RandomForestRegressor Standard Deviation of R2: 0.05931673691972828
+
+# ML model training
+# Read the CSV file into a Pandas DataFrame
+data = pd.read_csv("merged_logging4.csv")
+# Split the data into training and testing sets
+train_x, test_x, train_y, test_y = train_test_split(data.drop('Price', axis=1), data['Price'], test_size=0.2, random_state=89)
+# Create an XGBoost regressor
+xgr = xgb.XGBRegressor(n_estimators=1000, learning_rate=0.1, max_depth=5)
+# Train the model on the training data
+xgr.fit(train_x, train_y)
+# Make predictions on the test data
+predict = xgr.predict(test_x)
+from sklearn.metrics import mean_absolute_error, r2_score
+# Evaluate the performance of the model
+#print('MAE', mean_absolute_error(predict, test_y))
+#print('R2', r2_score(predict, test_y))
+# MAE 3914.1006521996796
+# R2 0.9895582334520862
+
+# Save the model to a file
+with open('model.pkl', 'wb') as f:
+       pickle.dump(xgr, f)
