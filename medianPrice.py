@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # import csv file
-data = pd.read_csv('ProcessedData.csv')
+data = pd.read_csv('ProcessedData_.csv')
 # print(data)
 
 # counts the no. of brands
