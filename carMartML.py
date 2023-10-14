@@ -212,14 +212,8 @@ df.to_csv('merged_logging4.csv', index=False)
 
 #Cross-Validation of R2 scores
 #XGBRegressor Cross-Validation R2 scores: [0.53194569 0.91739743 0.85214823 0.7482319  0.98649508]
-#LinearRegression Cross-Validation R2 scores: [ 0.15205803 -0.10283308  0.43823408  0.48781223  0.45523953]
-#RandomForestRegressor Cross-Validation R2 scores: [0.51176388 0.93126136 0.92664032 0.9427008  0.99433994]
 #XGBRegressor Mean R2: 0.8072436638808288
 #XGBRegressor Standard Deviation of R2: 0.15846305939269634
-#LinearRegression Mean R2: 0.28610216157828916
-#LinearRegression Standard Deviation of R2: 0.2287693036464772
-#RandomForestRegressor Mean R2: 0.8613412587766861
-#RandomForestRegressor Standard Deviation of R2: 0.17644554749604935
 
 # ML model training
 # Read the CSV file into a Pandas DataFrame
