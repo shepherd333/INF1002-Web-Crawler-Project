@@ -209,7 +209,6 @@ df.to_csv('merged_logging4.csv', index=False)
 # 0.9665030424772889
 # RandomForrest R2 scores
 # 0.9623617067325756
-
 #Cross-Validation of R2 scores
 #XGBRegressor Cross-Validation R2 scores: [0.53194569 0.91739743 0.85214823 0.7482319  0.98649508]
 #XGBRegressor Mean R2: 0.8072436638808288
