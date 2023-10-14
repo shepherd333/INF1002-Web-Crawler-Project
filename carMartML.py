@@ -72,7 +72,7 @@ encoded_registration_date = encoded_registration_date.astype(int)
 #drop high-corelation variables
 data_rm_brand.drop(['Depreciation','Registration Date','Manufacture Year','ARF','Engine Capacity','Power'],axis=1,inplace=True)
 remaining_columns = data_rm_brand.columns
-#print(remaining_columns)
+#save into csv file
 data_rm_brand.to_csv('remaining_columns.csv', index=False, columns=remaining_columns)
 
 #Our chosen dropped high-corelation variables assessed by ML model
