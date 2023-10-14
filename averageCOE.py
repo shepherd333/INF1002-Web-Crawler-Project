@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 # importing data set
-data=pd.read_csv('coe_cars.csv')
-
+data=pd.read_csv('M11-coe_results.csv')
+data=data[~data.isin(['Category C','Category D', 'Category E']).any(axis=1)]
 # counting the number of each cat
 cat_count=data['vehicle_class'].value_counts()
 print(cat_count)

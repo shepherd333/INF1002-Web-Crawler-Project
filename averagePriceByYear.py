@@ -9,7 +9,7 @@ import tkinter as tk
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 # data source
-data = pd.read_csv(r"C:\Users\tohzh\PycharmProjects\INF1002-Web-Crawler-Project\ProcessedData.csv")
+data = pd.read_csv('ProcessedData_.csv')
 # Convert the 'Registration Date' column to Pandas DateTime format and extract the year
 data['Year'] = pd.to_datetime(data['Registration Date']).dt.year
 # Group by year and calculate the mean price
