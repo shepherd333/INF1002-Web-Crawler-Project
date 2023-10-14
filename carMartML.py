@@ -10,13 +10,14 @@ from sklearn.ensemble import RandomForestRegressor
 from xgboost import XGBRegressor
 import xgboost as xgb
 import pickle
+import tkinter as tk
 from datetime import datetime
 
 # read the cleaned data
-data = pd.read_csv("ProcessedData.csv")
+data = pd.read_csv("ProcessedData_.csv")
 
 #drop car brand names
-data_rm_brand = data.drop('Brand', axis=1)
+data_rm_brand = data.drop(['Listing ID','Brand', 'Listing URL'], axis=1)
 
 #change car Registration Dates str type to datetime type
 data_rm_brand['Registration Date'] = pd.to_datetime(data['Registration Date'])
@@ -150,7 +151,7 @@ data_rm_brand_only_COE_logged.to_csv('COE_Price_columns.csv', index=False, colum
 data_rm_brand_only_deregisteration_logged = data_rm_brand.copy()
 data_rm_brand_only_deregisteration_logged['Deregisteration'] = np.log(data_rm_brand_only_deregisteration_logged['Deregistration'])
 data_rm_brand_only_deregisteration_logged.head()
-data_rm_brand_only_deregisteration_logged.to_csv('Deregisteration_columns.csv', index=False, columns=remaining_columns)
+data_rm_brand_only_deregisteration_logged.to_csv('Deregistration_columns.csv', index=False, columns=remaining_columns)
 
 # Before and After logging Histogram comparisons
 # Logged Histogram
@@ -158,7 +159,7 @@ data_rm_brand_only_deregisteration_logged.to_csv('Deregisteration_columns.csv', 
 #data_rm_brand_only_curbweight_logged = pd.read_csv('Curb_Weight_columns.csv')
 #data_rm_brand_only_roadtax_logged = pd.read_csv('Road_Tax_columns.csv')
 #data_rm_brand_only_COE_logged = pd.read_csv('COE_Price_columns.csv')
-#data_rm_brand_only_deregisteration_logged = pd.read_csv('Deregisteration_columns.csv')
+#data_rm_brand_only_deregistration_logged = pd.read_csv('Deregistration_columns.csv')
 # **Log-transform the data**
 #logged_data = {}
 #for column in ['OMV', 'Curb Weight', 'Road Tax', 'COE Price', 'Deregistration']:
@@ -188,71 +189,60 @@ data_rm_brand_only_deregisteration_logged.to_csv('Deregisteration_columns.csv', 
 # end of Data Visualization
 
 # merge loggings for training datasets
-# Read the two CSV files into Pandas DataFrames
+# Read the five CSV files into Pandas DataFrames
 df1 = pd.read_csv('OMV_columns.csv')
 df2 = pd.read_csv('Curb_Weight_columns.csv')
-# Merge the two DataFrames into a single DataFrame
-df = pd.concat([df1, df2], ignore_index=True)
-# Save the merged DataFrame to a new CSV file
-df.to_csv('merged_logging.csv', index=False)
-
-# Read the two CSV files into Pandas DataFrames
 df3 = pd.read_csv('Road_Tax_columns.csv')
-# Merge the two DataFrames into a single DataFrame
-df = pd.concat([df1, df2, df3], ignore_index=True)
-# Save the merged DataFrame to a new CSV file
-df.to_csv('merged_logging2.csv', index=False)
-
-# Read the two CSV files into Pandas DataFrames
 df4 = pd.read_csv('COE_Price_columns.csv')
-# Merge the two DataFrames into a single DataFrame
-df = pd.concat([df1, df2, df3, df4], ignore_index=True)
-# Save the merged DataFrame to a new CSV file
-df.to_csv('merged_logging3.csv', index=False)
+df5 = pd.read_csv('No_Of_Owners_columns.csv')
 
-# Read the two CSV files into Pandas DataFrames
-df5 = pd.read_csv('Deregisteration_columns.csv')
 # Merge the two DataFrames into a single DataFrame
 df = pd.concat([df1, df2, df3, df4, df5], ignore_index=True)
+
 # Save the merged DataFrame to a new CSV file
 df.to_csv('merged_logging4.csv', index=False)
 
-#Use the merged logging files to decide which training model to use based on the r2 scores
+#Use the final merged logging file to decide which training model to use based on the r2 scores
 # LinearRegression R2 scores
-# 0.45677199005109426 0.34060893342441134 0.4409196887381531 0.43707563329910004
+# 0.44667675264383067
 # XGBRegressor R2 scores
-# 0.9472150062225692 0.9580033607688891 0.9684520170458867 0.980124193035333
+# 0.9665030424772889
 # RandomForrest R2 scores
-# 0.9246515428125204 0.911425999608523 0.9633376982210334 0.9805476278069856
+# 0.9623617067325756
 
 #Cross-Validation of R2 scores
-#XGBRegressor Cross-Validation R2 scores: [0.82094687 0.94073907 0.96631028 0.87726598 0.99510782]
-#LinearRegression Cross-Validation R2 scores: [ 0.39872625 -0.432792    0.38508226  0.44163474  0.4213059 ]
-#RandomForestRegressor Cross-Validation R2 scores: [0.82048568 0.93294035 0.95808244 0.92102779 0.99919516]
-#XGBRegressor Mean R2: 0.9200740047505638
-#XGBRegressor Standard Deviation of R2: 0.06301369246296862
-#LinearRegression Mean R2: 0.24279143204865533
-#LinearRegression Standard Deviation of R2: 0.338343434947679
-#RandomForestRegressor Mean R2: 0.926346282315572
-#RandomForestRegressor Standard Deviation of R2: 0.05931673691972828
+#XGBRegressor Cross-Validation R2 scores: [0.53194569 0.91739743 0.85214823 0.7482319  0.98649508]
+#LinearRegression Cross-Validation R2 scores: [ 0.15205803 -0.10283308  0.43823408  0.48781223  0.45523953]
+#RandomForestRegressor Cross-Validation R2 scores: [0.51176388 0.93126136 0.92664032 0.9427008  0.99433994]
+#XGBRegressor Mean R2: 0.8072436638808288
+#XGBRegressor Standard Deviation of R2: 0.15846305939269634
+#LinearRegression Mean R2: 0.28610216157828916
+#LinearRegression Standard Deviation of R2: 0.2287693036464772
+#RandomForestRegressor Mean R2: 0.8613412587766861
+#RandomForestRegressor Standard Deviation of R2: 0.17644554749604935
 
 # ML model training
 # Read the CSV file into a Pandas DataFrame
 data = pd.read_csv("merged_logging4.csv")
 # Split the data into training and testing sets
-train_x, test_x, train_y, test_y = train_test_split(data.drop('Price', axis=1), data['Price'], test_size=0.2, random_state=89)
+train_x, test_x, train_y, test_y = train_test_split(data.drop('Price', axis=1), data['Price'], test_size=0.25, random_state=42)
 # Create an XGBoost regressor
 xgr = xgb.XGBRegressor(n_estimators=1000, learning_rate=0.1, max_depth=5)
 # Train the model on the training data
 xgr.fit(train_x, train_y)
 # Make predictions on the test data
 predict = xgr.predict(test_x)
-from sklearn.metrics import mean_absolute_error, r2_score
 # Evaluate the performance of the model
 #print('MAE', mean_absolute_error(predict, test_y))
 #print('R2', r2_score(predict, test_y))
-# MAE 3914.1006521996796
-# R2 0.9895582334520862
+
+# from ProcessedData.csv (old)
+# MAE 4373.667899687914
+# R2 0.9871182583379438
+
+#from ProcessedData_.csv (updated)
+#MAE 5525.721526005504
+#R2 0.957054475113605
 
 # Save the model to a file
 with open('model.pkl', 'wb') as f:
