@@ -29,7 +29,7 @@ main.title('Car Price History')
 main.geometry('1920x1080')
 #main.configure(bg="red")
 
-data = pd.read_csv("ProcessedData.csv")
+data = pd.read_csv("ProcessedData_.csv")
 
 
 def new_window():
