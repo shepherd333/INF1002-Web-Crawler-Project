@@ -116,13 +116,13 @@ def new_window():
     vehicle_transmission_dropdown = ttk.Combobox(new_win, textvariable=vehicle_transmission_var, values=vehicle_transmission)
     vehicle_transmission_dropdown.place(x=220,y=50)
 
-    tk.Label(new_win, text='Minimum Price:').place(x=350,y=70)
+    tk.Label(new_win, text='Minimum Price:').place(x=120,y=70)
     min_price_entry = tk.Entry(new_win)
-    min_price_entry.place(x=450,y=70)
+    min_price_entry.place(x=220,y=70)
 
-    tk.Label(new_win, text='Maximum Price:').place(x=120,y=70)
+    tk.Label(new_win, text='Maximum Price:').place(x=350,y=70)
     max_price_entry = tk.Entry(new_win)
-    max_price_entry.place(x=220,y=70)
+    max_price_entry.place(x=450,y=70)
 
     filter_button = tk.Button(new_win, text="Filter", command=filtered_csv_view)
     filter_button.place(x=390,y=10)
