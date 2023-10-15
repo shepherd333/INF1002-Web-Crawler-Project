@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="65966443-0520-4d65-bc7a-100d9c73801a" name="Changes" comment="Merge remote-tracking branch 'origin/FrontEnd' into FrontEnd&#10;&#10;# Conflicts:&#10;#&#9;M11-coe_results.csv" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="FrontEnd" />
+      </map>
+    </option>
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "git-widget-placeholder": "Develop"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Merge remote-tracking branch 'origin/FrontEnd' into FrontEnd&#10;&#10;# Conflicts:&#10;#&#9;M11-coe_results.csv" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/FrontEnd' into FrontEnd&#10;&#10;# Conflicts:&#10;#&#9;M11-coe_results.csv" />
+  </component>
+</project>
