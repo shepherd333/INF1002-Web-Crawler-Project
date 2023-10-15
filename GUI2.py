@@ -40,7 +40,7 @@ def new_window():
     label.pack()
 
     def csv_view():
-        with open('ProcessedData.csv', 'r') as file:
+        with open('ProcessedData_.csv', 'r') as file:
             csv_reader = csv.reader(file)
             header = next(csv_reader)
             tree.delete(*tree.get_children())  # Clear the current data
@@ -53,7 +53,7 @@ def new_window():
             for row in csv_reader:
                 tree.insert("", "end", values=row)
     def filtered_csv_view():
-        with open('ProcessedData.csv', 'r') as file:
+        with open('ProcessedData_.csv', 'r') as file:
             csv_reader = csv.reader(file)
             header = next(csv_reader)
             tree.delete(*tree.get_children())  # Clear the current data
@@ -66,10 +66,12 @@ def new_window():
             brand = vehicle_brand_var.get()
             v_type = vehicle_type_var.get()
             v_trans = vehicle_transmission_var.get()
+            min_price = float(min_price_entry.get())
             max_price = float(max_price_entry.get())
             filtered_data = data[(data['Brand'] == brand) &
                                (data['Vehicle Type'] == v_type) &
                                (data['Transmission'] == v_trans) &
+                                (data['Price'] >= min_price) &
                                 (data['Price'] <= max_price)]
             filter_data(filtered_data)
 
@@ -79,7 +81,6 @@ def new_window():
         if not filtered_data.empty:
             for index, row in filtered_data.iterrows():
                 tree.insert('', 'end', values=row.tolist())
-
 
     def machine_learn():
         os.system('carMartML.py')
@@ -115,6 +116,10 @@ def new_window():
     vehicle_transmission_dropdown = ttk.Combobox(new_win, textvariable=vehicle_transmission_var, values=vehicle_transmission)
     vehicle_transmission_dropdown.place(x=220,y=50)
 
+    tk.Label(new_win, text='Minimum Price:').place(x=350,y=70)
+    min_price_entry = tk.Entry(new_win)
+    min_price_entry.place(x=450,y=70)
+
     tk.Label(new_win, text='Maximum Price:').place(x=120,y=70)
     max_price_entry = tk.Entry(new_win)
     max_price_entry.place(x=220,y=70)
@@ -135,12 +140,28 @@ def depreciation():
     os.system('depreciation.py')
 
 
-def coe_price_trend():
-    os.system('COE_pricetrend.py')
+def average_coe():
+    os.system('averageCOE.py')
 
 
-def average_price_by_brand():
-    os.system('zwTest2.py')
+def coe_carprice():
+    os.system('coeQuota_carPrice.py')
+
+
+def coe_premium():
+    os.system('coeQuota_premium.py')
+
+
+def vehbyregdate():
+    os.system('VehByRegDate.py')
+
+
+def medianprice():
+    os.system('medianPrice.py')
+
+
+# def average_price_by_brand():
+#     os.system('zwTest2.py')
 
 
 toplabel=tk.Label(main, text="VEHICLE PRICE", font=headlabelfont, bg='DodgerBlue3').pack(side=TOP, fill=X)
@@ -150,16 +171,23 @@ data_button.pack(pady=10)
 
 # Placing components in the main frame
 Label(main,text="Vehicle History Charts", font=('Calibri',16)).pack(pady=20)
-b2= tk.Button(main, text='View Average Price by Year', font=labelfont,bg='white', command=year, width=22)
+b2= tk.Button(main, text='View Average Price by Year', font=labelfont,bg='white', command=year, width=30)
 b2.pack(padx=5,pady=10)
-b3= tk.Button(main,text='View Average Price by Brand', font=labelfont, bg='white',command=brand, width=22)
+b3= tk.Button(main,text='View Average Price by Brand', font=labelfont, bg='white',command=brand, width=30)
 b3.pack(padx=5,pady=10)
-b4= tk.Button(main,text='View Vehicle Depreciation', font=labelfont,bg='white', command=depreciation, width=22)
+b4= tk.Button(main,text='View Vehicle Depreciation', font=labelfont,bg='white', command=depreciation, width=30)
 b4.pack(padx=5,pady=10)
-b5= tk.Button(main,text='View COE Price Trend', font=labelfont,bg='white', command=coe_price_trend, width=22)
+b5= tk.Button(main,text='View Average COE Price', font=labelfont,bg='white', command=average_coe, width=30)
 b5.pack(padx=5,pady=10)
-b6= tk.Button(main,text='View Average Price by Brand', font=labelfont,bg='white', command=average_price_by_brand, width=22)
+b6= tk.Button(main,text='Annual COE Quotas vs. Average Car Price', font=labelfont,bg='white', command=coe_carprice, width=30)
 b6.pack(padx=5,pady=10)
+b7= tk.Button(main,text='Annual COE Quotas vs Premium Price', font=labelfont,bg='white', command=coe_premium, width=30)
+b7.pack(padx=5,pady=10)
+b8= tk.Button(main,text='Number of Vehicles Registered by Year', font=labelfont,bg='white', command=vehbyregdate, width=30)
+b8.pack(padx=5,pady=10)
+b9= tk.Button(main,text='Median Price by Brands', font=labelfont,bg='white', command=medianprice, width=30)
+b9.pack(padx=5,pady=10)
+
 # # Finalizing the GUI window
 main.mainloop()
 
