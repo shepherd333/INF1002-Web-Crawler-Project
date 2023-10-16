@@ -236,8 +236,8 @@ xgr.fit(train_x, train_y)
 # Make predictions on the test data
 predict = xgr.predict(test_x)
 # Evaluate the performance of the model
-print('MAE', mean_absolute_error(predict, test_y))
-print('R2', r2_score(predict, test_y))
+#print('MAE', mean_absolute_error(predict, test_y))
+#print('R2', r2_score(predict, test_y))
 
 # from ProcessedData.csv (old)
 # MAE 4373.667899687914
