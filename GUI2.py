@@ -30,6 +30,9 @@ main.geometry('1920x1080')
 #main.configure(bg="red")
 
 data = pd.read_csv("ProcessedData_.csv")
+# Load the trained XGBoost model
+with open('model.pkl', 'rb') as f:
+    xgr = pickle.load(f)
 
 
 def new_window():
@@ -85,6 +88,38 @@ def new_window():
     def machine_learn():
         os.system('carMartML.py')
 
+    def predict_price():
+        # Retrieve input values from the GUI
+        omv = float(omv_entry.get())
+        curb_weight = float(curb_weight_entry.get())
+        road_tax = float(road_tax_entry.get())
+        coe_price = float(coe_price_entry.get())
+        no_of_owners = float(no_of_owners_entry.get())
+
+        # Prepare input data for prediction
+        input_data = pd.DataFrame({
+            'OMV': [omv],
+            'Curb Weight': [curb_weight],
+            'Road Tax': [road_tax],
+            'COE Price': [coe_price],
+            'No. Of Owners': [no_of_owners]})
+
+        # Make a prediction using the XGBoost model
+        predicted_price = xgr.predict(input_data)
+
+        # Display the predicted price
+        result_label.config(text=f"Predicted Price: {predicted_price:.2f}")
+
+        # Compare the predicted price to the user input price
+        user_input_price = float(price_entry.get())
+
+        if predicted_price < user_input_price:
+            feedback_label.config(text="Predicted price is lower than the input price.")
+        elif predicted_price == user_input_price:
+            feedback_label.config(text="Predicted price is the same as the input price.")
+        else:
+            feedback_label.config(text="Predicted price is higher than the input price.")
+
     open_button = tk.Button(new_win, text="View All Data", command=csv_view)
     open_button.pack(pady=10)
     tree = ttk.Treeview(new_win, show='headings')
@@ -92,8 +127,8 @@ def new_window():
     tree.config(xscrollcommand=hscrollbar.set)
     tree.place(x=150,y=100,width=1200,height=600)
     hscrollbar.place(x=150,y=700,width=1200)
-    ml_Button = tk.Button(new_win, text="Predict Price", command=machine_learn)
-    ml_Button.place(x=500,y=720)
+    #ml_Button = tk.Button(new_win, text="Predict Price", command=machine_learn)
+    #ml_Button.place(x=500,y=720)
 
     unique_vehicle_brand = data['Brand'].unique()
     vehicle_brand = [vt.strip() for vt in unique_vehicle_brand if vt.strip() != '']
@@ -126,6 +161,49 @@ def new_window():
 
     filter_button = tk.Button(new_win, text="Filter", command=filtered_csv_view)
     filter_button.place(x=390,y=10)
+
+    # Create input fields
+    omv_label = tk.Label(new_win, text="OMV")
+    omv_label.place(x=200,y=720)
+    omv_entry = tk.Entry(new_win)
+    omv_entry.place(x=200,y=740)
+
+    curb_weight_label = tk.Label(new_win, text="Curb Weight")
+    curb_weight_label.place(x=200,y=760)
+    curb_weight_entry = tk.Entry(new_win)
+    curb_weight_entry.place(x=200,y=780)
+
+    road_tax_label = tk.Label(new_win, text="Road Tax")
+    road_tax_label.place(x=350,y=720)
+    road_tax_entry = tk.Entry(new_win)
+    road_tax_entry.place(x=350,y=740)
+
+    coe_price_label = tk.Label(new_win, text="COE Price")
+    coe_price_label.place(x=350,y=760)
+    coe_price_entry = tk.Entry(new_win)
+    coe_price_entry.place(x=350,y=780)
+
+    no_of_owners_label = tk.Label(new_win, text="No. Of Owners")
+    no_of_owners_label.place(x=500,y=720)
+    no_of_owners_entry = tk.Entry(new_win)
+    no_of_owners_entry.place(x=500,y=740)
+
+    price_label = tk.Label(new_win, text="Input Price")
+    price_label.place(x=500,y=760)
+    price_entry = tk.Entry(new_win)
+    price_entry.place(x=500,y=780)
+
+    # Create a button for prediction
+    predict_button = tk.Button(new_win, text="Predict", command=predict_price)
+    predict_button.place(x=650,y=760)
+
+    # Create a label to display the predicted price
+    result_label = tk.Label(new_win, text="")
+    result_label.place(x=700,y=760)
+
+    # Create a label to provide feedback
+    feedback_label = tk.Label(new_win, text="")
+    feedback_label.place(x=700,y=780)
 
 
 def year():
