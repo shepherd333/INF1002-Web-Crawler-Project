@@ -20,42 +20,47 @@ from xgboost import XGBRegressor
 import xgboost as xgb
 import pickle
 
-
+# setting some fonts
 headlabelfont = ("Noto Sans CJK TC", 15, 'bold')
 labelfont = ('Garamond', 12)
 
+# Main Tkinter GUI
 main = Tk()
-main.title('Car Price History')
+main.title('ONLINE USED CARS MARKETPLACE DATA AND ANALYSIS')
 main.geometry('1920x1080')
-#main.configure(bg="red")
+# main.configure(bg="red")
 
+# csv to be read and used as dataframe
 data = pd.read_csv("ProcessedData_.csv")
 # Load the trained XGBoost model
 with open('model.pkl', 'rb') as f:
     xgr = pickle.load(f)
 
 
+# second level GUI window
 def new_window():
     new_win = tk.Toplevel(main)
     new_win.title(f"DATA VIEWER")
     new_win.geometry("1920x1080")
-    label = tk.Label(new_win, text=f"VIEW DATASET")
+    label = tk.Label(new_win, text=f"VIEW VEHICLE DATASET")
     label.pack()
 
+    # read csv and load into treeview
     def csv_view():
         with open('ProcessedData_.csv', 'r') as file:
             csv_reader = csv.reader(file)
-            header = next(csv_reader)
+            header = next(csv_reader)  # read the first row as headers
             tree.delete(*tree.get_children())  # Clear the current data
 
-            tree["height"] = 25
+            tree["height"] = 25  # number of rows to display
             tree["columns"] = header
             for i in header:
                 tree.heading(i, text=i)
-                tree.column(i,anchor='c')
+                tree.column(i,anchor='c')  # for loop to insert headers
             for row in csv_reader:
-                tree.insert("", "end", values=row)
-    def filtered_csv_view():
+                tree.insert("", "end", values=row)  # for loop to insert rows from csv
+
+    def filtered_csv_view():  # almost the same as csv_view function but with filtered rows
         with open('ProcessedData_.csv', 'r') as file:
             csv_reader = csv.reader(file)
             header = next(csv_reader)
@@ -71,24 +76,21 @@ def new_window():
             v_trans = vehicle_transmission_var.get()
             min_price = float(min_price_entry.get())
             max_price = float(max_price_entry.get())
-            filtered_data = data[(data['Brand'] == brand) &
+            filtered_data = data[(data['Brand'] == brand) &  # filtering rows based on user input
                                (data['Vehicle Type'] == v_type) &
                                (data['Transmission'] == v_trans) &
                                 (data['Price'] >= min_price) &
                                 (data['Price'] <= max_price)]
             filter_data(filtered_data)
 
-    def filter_data(filtered_data):
+    def filter_data(filtered_data):  # function to clear the treeview and replace with filtered data
         for item in tree.get_children():
             tree.delete(item)
         if not filtered_data.empty:
             for index, row in filtered_data.iterrows():
                 tree.insert('', 'end', values=row.tolist())
 
-    def machine_learn():
-        os.system('carMartML.py')
-
-    def predict_price():
+    def predict_price():  # ML Model
         # Retrieve input values from the GUI
         omv = float(omv_entry.get())
         curb_weight = float(curb_weight_entry.get())
@@ -98,17 +100,23 @@ def new_window():
 
         # Prepare input data for prediction
         input_data = pd.DataFrame({
-            'OMV': [omv],
-            'Curb Weight': [curb_weight],
             'Road Tax': [road_tax],
+            'COE Left': 0,
+            'Mileage': 0,
+            'Transmission': 0,
+            'Deregistration': 0,
+            'OMV': [omv],
             'COE Price': [coe_price],
-            'No. Of Owners': [no_of_owners]})
+            'Curb Weight': [curb_weight],
+            'No. Of Owners': [no_of_owners],
+            'Vehicle Type':0})
 
         # Make a prediction using the XGBoost model
         predicted_price = xgr.predict(input_data)
+        predicted_value = predicted_price[0]
 
         # Display the predicted price
-        result_label.config(text=f"Predicted Price: {predicted_price:.2f}")
+        result_label.config(text=f"Predicted Price: {predicted_value:.2f}")
 
         # Compare the predicted price to the user input price
         user_input_price = float(price_entry.get())
@@ -120,16 +128,15 @@ def new_window():
         else:
             feedback_label.config(text="Predicted price is higher than the input price.")
 
-    open_button = tk.Button(new_win, text="View All Data", command=csv_view)
+    open_button = tk.Button(new_win, text="View All Data", command=csv_view)  # button to view full csv data
     open_button.pack(pady=10)
-    tree = ttk.Treeview(new_win, show='headings')
-    hscrollbar = ttk.Scrollbar(new_win, orient='horizontal', command=tree.xview)
+    tree = ttk.Treeview(new_win, show='headings')  # treeview to display the csv
+    hscrollbar = ttk.Scrollbar(new_win, orient='horizontal', command=tree.xview)  # horizontal scrollbar to view treeview
     tree.config(xscrollcommand=hscrollbar.set)
     tree.place(x=150,y=100,width=1200,height=600)
     hscrollbar.place(x=150,y=700,width=1200)
-    #ml_Button = tk.Button(new_win, text="Predict Price", command=machine_learn)
-    #ml_Button.place(x=500,y=720)
 
+    #  Enter unique values from columns in the csv to add into a dropdown list for user to choose
     unique_vehicle_brand = data['Brand'].unique()
     vehicle_brand = [vt.strip() for vt in unique_vehicle_brand if vt.strip() != '']
     tk.Label(new_win, text='Vehicle Brand:').place(x=120, y=10)
@@ -151,6 +158,7 @@ def new_window():
     vehicle_transmission_dropdown = ttk.Combobox(new_win, textvariable=vehicle_transmission_var, values=vehicle_transmission)
     vehicle_transmission_dropdown.place(x=220,y=50)
 
+    #  User input fields for min and max price
     tk.Label(new_win, text='Minimum Price:').place(x=120,y=70)
     min_price_entry = tk.Entry(new_win)
     min_price_entry.place(x=220,y=70)
@@ -159,53 +167,59 @@ def new_window():
     max_price_entry = tk.Entry(new_win)
     max_price_entry.place(x=450,y=70)
 
+    #  button to display the filtered csv data
     filter_button = tk.Button(new_win, text="Filter", command=filtered_csv_view)
     filter_button.place(x=390,y=10)
 
-    # Create input fields
+    #  Text label to tell users what the ML is  for
+    ML_label = tk.Label(new_win, text="Interested in a car? Let's check if the deal is worth it!")
+    ML_label.place(x=200,y=720)
+
+    # Create input fields for ML model
     omv_label = tk.Label(new_win, text="OMV")
-    omv_label.place(x=200,y=720)
+    omv_label.place(x=500,y=780)
     omv_entry = tk.Entry(new_win)
-    omv_entry.place(x=200,y=740)
+    omv_entry.place(x=500,y=800)
 
     curb_weight_label = tk.Label(new_win, text="Curb Weight")
-    curb_weight_label.place(x=200,y=760)
+    curb_weight_label.place(x=500,y=740)
     curb_weight_entry = tk.Entry(new_win)
-    curb_weight_entry.place(x=200,y=780)
+    curb_weight_entry.place(x=500,y=760)
 
     road_tax_label = tk.Label(new_win, text="Road Tax")
-    road_tax_label.place(x=350,y=720)
+    road_tax_label.place(x=350,y=740)
     road_tax_entry = tk.Entry(new_win)
-    road_tax_entry.place(x=350,y=740)
+    road_tax_entry.place(x=350,y=760)
 
     coe_price_label = tk.Label(new_win, text="COE Price")
-    coe_price_label.place(x=350,y=760)
+    coe_price_label.place(x=350,y=780)
     coe_price_entry = tk.Entry(new_win)
-    coe_price_entry.place(x=350,y=780)
+    coe_price_entry.place(x=350,y=800)
 
     no_of_owners_label = tk.Label(new_win, text="No. Of Owners")
-    no_of_owners_label.place(x=500,y=720)
+    no_of_owners_label.place(x=200,y=780)
     no_of_owners_entry = tk.Entry(new_win)
-    no_of_owners_entry.place(x=500,y=740)
+    no_of_owners_entry.place(x=200,y=800)
 
     price_label = tk.Label(new_win, text="Input Price")
-    price_label.place(x=500,y=760)
+    price_label.place(x=200,y=740)
     price_entry = tk.Entry(new_win)
-    price_entry.place(x=500,y=780)
+    price_entry.place(x=200,y=760)
 
     # Create a button for prediction
     predict_button = tk.Button(new_win, text="Predict", command=predict_price)
-    predict_button.place(x=650,y=760)
+    predict_button.place(x=650,y=780)
 
     # Create a label to display the predicted price
     result_label = tk.Label(new_win, text="")
-    result_label.place(x=700,y=760)
+    result_label.place(x=700,y=780)
 
-    # Create a label to provide feedback
+    # Create a label to provide feedback on predicted price
     feedback_label = tk.Label(new_win, text="")
-    feedback_label.place(x=700,y=780)
+    feedback_label.place(x=700,y=800)
 
 
+#  functions to call matplotlib files
 def year():
     os.system('averagePriceByYear.py')
 
@@ -238,17 +252,13 @@ def medianprice():
     os.system('medianPrice.py')
 
 
-# def average_price_by_brand():
-#     os.system('zwTest2.py')
 
-
-toplabel=tk.Label(main, text="VEHICLE PRICE", font=headlabelfont, bg='DodgerBlue3').pack(side=TOP, fill=X)
+# Placing components in the main frame
+toplabel=tk.Label(main, text="ONLINE USED CARS MARKETPLACE DATA AND ANALYSIS", font=headlabelfont, bg='AQUA').pack(side=TOP, fill=X)
 data_button = tk.Button(main, text="Show All Data", command=lambda: new_window(),bg='white')
 data_button.pack(pady=10)
 
-
-# Placing components in the main frame
-Label(main,text="Vehicle History Charts", font=('Calibri',16)).pack(pady=20)
+Label(main,text="Vehicle Data Analysis Charts", font=('Calibri',16)).pack(pady=20)
 b2= tk.Button(main, text='View Average Price by Year', font=labelfont,bg='white', command=year, width=30)
 b2.pack(padx=5,pady=10)
 b3= tk.Button(main,text='View Average Price by Brand', font=labelfont, bg='white',command=brand, width=30)
@@ -257,7 +267,7 @@ b4= tk.Button(main,text='View Vehicle Depreciation', font=labelfont,bg='white', 
 b4.pack(padx=5,pady=10)
 b5= tk.Button(main,text='View Average COE Price', font=labelfont,bg='white', command=average_coe, width=30)
 b5.pack(padx=5,pady=10)
-b6= tk.Button(main,text='Annual COE Quotas vs. Average Car Price', font=labelfont,bg='white', command=coe_carprice, width=30)
+b6= tk.Button(main,text='Annual COE Quotas vs Average Car Price', font=labelfont,bg='white', command=coe_carprice, width=30)
 b6.pack(padx=5,pady=10)
 b7= tk.Button(main,text='Annual COE Quotas vs Premium Price', font=labelfont,bg='white', command=coe_premium, width=30)
 b7.pack(padx=5,pady=10)
@@ -266,6 +276,6 @@ b8.pack(padx=5,pady=10)
 b9= tk.Button(main,text='Median Price by Brands', font=labelfont,bg='white', command=medianprice, width=30)
 b9.pack(padx=5,pady=10)
 
-# # Finalizing the GUI window
+# Running the GUI window
 main.mainloop()
 
