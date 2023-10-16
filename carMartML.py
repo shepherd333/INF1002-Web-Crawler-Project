@@ -196,7 +196,17 @@ df3 = pd.read_csv('Road_Tax_columns.csv')
 df4 = pd.read_csv('COE_Price_columns.csv')
 df5 = pd.read_csv('No_Of_Owners_columns.csv')
 
-# Merge the two DataFrames into a single DataFrame
+#df = pd.concat([df1, df2], ignore_index=True)
+# Save the merged DataFrame to a new CSV file
+#df.to_csv('merged_logging.csv', index=False)
+#df = pd.concat([df1, df2, df3], ignore_index=True)
+# Save the merged DataFrame to a new CSV file
+#df.to_csv('merged_logging2.csv', index=False)
+#df = pd.concat([df1, df2, df3, df4], ignore_index=True)
+# Save the merged DataFrame to a new CSV file
+#df.to_csv('merged_logging3.csv', index=False)
+
+# Merge the five DataFrames into a single DataFrame
 df = pd.concat([df1, df2, df3, df4, df5], ignore_index=True)
 
 # Save the merged DataFrame to a new CSV file
