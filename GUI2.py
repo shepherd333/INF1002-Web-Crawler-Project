@@ -103,13 +103,10 @@ def new_window():
             'Road Tax': [road_tax],
             'COE Left': 0,
             'Mileage': 0,
-            'Transmission': 0,
-            'Deregistration': 0,
             'OMV': [omv],
             'COE Price': [coe_price],
             'Curb Weight': [curb_weight],
-            'No. Of Owners': [no_of_owners],
-            'Vehicle Type':0})
+            'No. Of Owners': [no_of_owners]})
 
         # Make a prediction using the XGBoost model
         predicted_price = xgr.predict(input_data)
