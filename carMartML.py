@@ -244,8 +244,8 @@ predict = xgr.predict(test_x)
 # R2 0.9871182583379438
 
 #from ProcessedData_.csv (updated)
-#MAE 5525.721526005504
-#R2 0.957054475113605
+#MAE 8240.562093914996
+#R2 0.9313314594769386
 
 # Save the model to a file
 with open('model.pkl', 'wb') as f:
