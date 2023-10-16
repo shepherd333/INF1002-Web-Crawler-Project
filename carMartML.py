@@ -128,30 +128,30 @@ selected_X.to_csv('MLselected_columns.csv', index=False, columns=selected_X)
 #pd.DataFrame.hist(selected_X,ax=ax)
 
 #chosen 5 of the ML selected variables for logging (OMV,Curb Weight, Road Tax, COE Price and Deregisteration)
-data_rm_brand_only_OMV_logged = data_rm_brand.copy()
+data_rm_brand_only_OMV_logged = data_rm_brand.copy().drop(columns=['Transmission','Deregistration','Vehicle Type'], axis=1)
 data_rm_brand_only_OMV_logged['OMV'] = np.log(data_rm_brand_only_OMV_logged['OMV'])
 data_rm_brand_only_OMV_logged.head()
-data_rm_brand_only_OMV_logged.to_csv('OMV_columns.csv', index=False, columns=remaining_columns)
+data_rm_brand_only_OMV_logged.to_csv('OMV_columns.csv', index=False)
 
-data_rm_brand_only_curbweight_logged = data_rm_brand.copy()
+data_rm_brand_only_curbweight_logged = data_rm_brand.copy().drop(columns=['Transmission','Deregistration','Vehicle Type'], axis=1)
 data_rm_brand_only_curbweight_logged['Curb Weight'] = np.log(data_rm_brand_only_curbweight_logged['Curb Weight'])
 data_rm_brand_only_curbweight_logged.head()
-data_rm_brand_only_curbweight_logged.to_csv('Curb_Weight_columns.csv', index=False, columns=remaining_columns)
+data_rm_brand_only_curbweight_logged.to_csv('Curb_Weight_columns.csv', index=False)
 
-data_rm_brand_only_roadtax_logged = data_rm_brand.copy()
+data_rm_brand_only_roadtax_logged = data_rm_brand.copy().drop(columns=['Transmission','Deregistration','Vehicle Type'], axis=1)
 data_rm_brand_only_roadtax_logged['Road Tax'] = np.log(data_rm_brand_only_roadtax_logged['Road Tax'])
 data_rm_brand_only_roadtax_logged.head()
-data_rm_brand_only_roadtax_logged.to_csv('Road_Tax_columns.csv', index=False, columns=remaining_columns)
+data_rm_brand_only_roadtax_logged.to_csv('Road_Tax_columns.csv', index=False)
 
-data_rm_brand_only_COE_logged = data_rm_brand.copy()
+data_rm_brand_only_COE_logged = data_rm_brand.copy().drop(columns=['Transmission','Deregistration','Vehicle Type'], axis=1)
 data_rm_brand_only_COE_logged['COE Price'] = np.log(data_rm_brand_only_COE_logged['COE Price'])
 data_rm_brand_only_COE_logged.head()
-data_rm_brand_only_COE_logged.to_csv('COE_Price_columns.csv', index=False, columns=remaining_columns)
+data_rm_brand_only_COE_logged.to_csv('COE_Price_columns.csv', index=False)
 
-data_rm_brand_only_owners_logged = data_rm_brand.copy()
+data_rm_brand_only_owners_logged = data_rm_brand.copy().drop(columns=['Transmission','Deregistration','Vehicle Type'], axis=1)
 data_rm_brand_only_owners_logged['No. Of Owners'] = np.log(data_rm_brand_only_owners_logged['No. Of Owners'])
 data_rm_brand_only_owners_logged.head()
-data_rm_brand_only_owners_logged.to_csv('No_Of_Owners_columns.csv', index=False, columns=remaining_columns)
+data_rm_brand_only_owners_logged.to_csv('No_Of_Owners_columns.csv', index=False)
 
 # Before and After logging Histogram comparisons
 # Logged Histogram
@@ -220,9 +220,9 @@ df.to_csv('merged_logging4.csv', index=False)
 # RandomForrest R2 scores
 # 0.9623617067325756
 #Cross-Validation of R2 scores
-#XGBRegressor Cross-Validation R2 scores: [0.53194569 0.91739743 0.85214823 0.7482319  0.98649508]
-#XGBRegressor Mean R2: 0.8072436638808288
-#XGBRegressor Standard Deviation of R2: 0.15846305939269634
+#XGBRegressor Cross-Validation R2 scores: [0.04788376 0.74292074 0.84416435 0.78959246 0.95804782]
+#XGBRegressor Mean R2: 0.676521826739158
+#XGBRegressor Standard Deviation of R2: 0.32240983328864037
 
 # ML model training
 # Read the CSV file into a Pandas DataFrame
@@ -236,8 +236,8 @@ xgr.fit(train_x, train_y)
 # Make predictions on the test data
 predict = xgr.predict(test_x)
 # Evaluate the performance of the model
-#print('MAE', mean_absolute_error(predict, test_y))
-#print('R2', r2_score(predict, test_y))
+print('MAE', mean_absolute_error(predict, test_y))
+print('R2', r2_score(predict, test_y))
 
 # from ProcessedData.csv (old)
 # MAE 4373.667899687914
