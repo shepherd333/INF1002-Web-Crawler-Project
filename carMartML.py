@@ -148,10 +148,10 @@ data_rm_brand_only_COE_logged['COE Price'] = np.log(data_rm_brand_only_COE_logge
 data_rm_brand_only_COE_logged.head()
 data_rm_brand_only_COE_logged.to_csv('COE_Price_columns.csv', index=False, columns=remaining_columns)
 
-data_rm_brand_only_deregisteration_logged = data_rm_brand.copy()
-data_rm_brand_only_deregisteration_logged['Deregisteration'] = np.log(data_rm_brand_only_deregisteration_logged['Deregistration'])
-data_rm_brand_only_deregisteration_logged.head()
-data_rm_brand_only_deregisteration_logged.to_csv('Deregistration_columns.csv', index=False, columns=remaining_columns)
+data_rm_brand_only_owners_logged = data_rm_brand.copy()
+data_rm_brand_only_owners_logged['No. Of Owners'] = np.log(data_rm_brand_only_owners_logged['No. Of Owners'])
+data_rm_brand_only_owners_logged.head()
+data_rm_brand_only_owners_logged.to_csv('No_Of_Owners_columns.csv', index=False, columns=remaining_columns)
 
 # Before and After logging Histogram comparisons
 # Logged Histogram
