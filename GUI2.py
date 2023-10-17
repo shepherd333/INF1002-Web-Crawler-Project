@@ -63,6 +63,12 @@ def new_window():
                 tree.column(i,anchor='c')  # for loop to insert headers
             for row in csv_reader:
                 tree.insert("", "end", values=row)  # for loop to insert rows from csv
+        def download_all_data():
+            save_path = filedialog.asksaveasfilename(defaultextension=".csv", filetypes=[("CSV Files", "*.csv")])
+            if save_path:
+                data.to_csv(save_path,index=False)
+        download_button = tk.Button(new_win, text="Download All Data", command=download_all_data)
+        download_button.pack(pady=3)
 
     def filtered_csv_view():  # almost the same as csv_view function but with filtered rows
         with open('ProcessedData_.csv', 'r') as file:
@@ -99,7 +105,7 @@ def new_window():
                         mb.showinfo("Info", "Data Saved Successfully")
             else:
                 mb.showwarning("Warning", "No filtered data to save.")
-        save_button = tk.Button(new_win, text="Save Filtered Data", command=save_to_csv)
+        save_button = tk.Button(new_win, text="Download Filtered Data", command=save_to_csv)
         save_button.place(x=390, y=35)
 
     def filter_data(filtered_data):  # function to clear the treeview and replace with filtered data
