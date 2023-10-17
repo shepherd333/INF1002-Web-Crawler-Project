@@ -6,7 +6,7 @@ import tkinter as tk
 from tkinter import simpledialog, messagebox
 
 # Data source (change if needed)
-data = pd.read_csv(r"C:\Users\tohzh\PycharmProjects\INF1002-Web-Crawler-Project\ProcessedData.csv")
+data = pd.read_csv('ProcessedData_.csv')
 
 def display_box_plot():
     # Create a tkinter window
