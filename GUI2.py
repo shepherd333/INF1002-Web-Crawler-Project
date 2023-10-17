@@ -67,8 +67,9 @@ def new_window():
             save_path = filedialog.asksaveasfilename(defaultextension=".csv", filetypes=[("CSV Files", "*.csv")])
             if save_path:
                 data.to_csv(save_path,index=False)
+                mb.showinfo("Info", "Data Downloaded Successfully")
         download_button = tk.Button(new_win, text="Download All Data", command=download_all_data)
-        download_button.pack(pady=3)
+        download_button.place(x=695,y=65)
 
     def filtered_csv_view():  # almost the same as csv_view function but with filtered rows
         with open('ProcessedData_.csv', 'r') as file:
@@ -102,7 +103,7 @@ def new_window():
                         csv_writer = csv.writer(file)
                         csv_writer.writerow(header)
                         filtered_data.to_csv(save_path,index=False)
-                        mb.showinfo("Info", "Data Saved Successfully")
+                        mb.showinfo("Info", "Data Downloaded Successfully")
             else:
                 mb.showwarning("Warning", "No filtered data to save.")
         save_button = tk.Button(new_win, text="Download Filtered Data", command=save_to_csv)
