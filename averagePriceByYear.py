@@ -3,59 +3,48 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import csv
 import numpy as np
-from matplotlib.widgets import Slider, Button, RadioButtons
-from matplotlib.patches import Rectangle
-import tkinter as tk
-from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
 
 # data source
-data = pd.read_csv('ProcessedData_.csv')
+data = pd.read_csv(r"C:\Users\tohzh\PycharmProjects\INF1002-Web-Crawler-Project\ProcessedData.csv")
+
+
+#data['Year'] = pd.to_datetime(data['Registration Date'])
+# Group by registration date and calculate mean price
+price_by_date = data.groupby('Registration Date')['Price'].mean().reset_index()
+
 # Convert the 'Registration Date' column to Pandas DateTime format and extract the year
 data['Year'] = pd.to_datetime(data['Registration Date']).dt.year
+
 # Group by year and calculate the mean price
-average_price_by_year = data.groupby("Year")["Price"].mean()
-
+average_price_by_year = data.groupby("Year")["Price"].median()
 
 # Plotting the average price by year
-average_price_by_year.sort_index().plot(kind='bar', color='darkgreen', figsize=(10, 7),title="Average Price of a Car by Year")
+average_price_by_year.sort_index().plot(kind='bar', color='darkgreen', figsize=(10, 7),
+                                        title="Median Price of a Car by Year")
 plt.xlabel('Year')
-plt.ylabel('Average Price of Car by Year')
+plt.ylabel('Price')
 plt.show()
+# Plot price trends over time
+#plt.figure(figsize=(12, 6))
+#plt.plot(price_by_date['Registration Date'], price_by_date['Price'])
+#plt.hist(prices_data, bins=20, edgecolor='black')
+#data.groupby("Year")["Price"].mean().sort_values().plot(kind='bar', color='darkgreen',figsize=(10,7),title="Average Price of a Car\by Year");
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# Plotting the average price by year
-# average_price_by_year.sort_index().plot(kind='bar', color='darkgreen', figsize=(10, 7),title="Average Price of a Car by Year")
-# plt.xlabel('Year')
-# plt.ylabel('Average Price')
+#plt.xlabel('Price')
+#plt.ylabel('Registration Year')
+#plt.title('Average Price of Car by Registration Year')
 #plt.show()
 
-# Plot price trends over time
-# plt.figure(figsize=(12, 6))
-# plt.plot(price_by_date['Registration Date'], price_by_date['Price'])
-# plt.hist(prices_data, bins=20, edgecolor='black')
-# data.groupby("Year")["Price"].mean().sort_values().plot(kind='bar', color='darkgreen',figsize=(10,7),title="Average Price of a Car\by Year");
 
-# plt.xlabel('Price')
-# plt.ylabel('Registration Year')
-# plt.title('Average Price of Car by Registration Year')
-# plt.show()
+
+
+
+
+
+
+
+
+
 
 """
 data['Prices'] = data['Prices'].str.replace(',', '').astype(float)
@@ -90,3 +79,16 @@ plt.ylabel('Mean Price')
 plt.title('Price Trends Over Time')
 plt.show()
 """
+
+
+
+
+
+
+
+
+
+
+
+
+

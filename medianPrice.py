@@ -25,9 +25,13 @@ print(brand_counts)
 # median price of each brand of car
 median_prices_filtered = filtered_brand.groupby('Brand')['Price'].median().reset_index()
 
+
+colours=['blue','green','orange','yellow','pink','red','purple','cyan','grey','olive']
 # plotting bar graph of the median price of car brands that have at least 100 postings
 fig_bar=plt.figure(figsize=(12,6))
-plt.bar(median_prices_filtered['Brand'], median_prices_filtered['Price'])
+plt.bar(median_prices_filtered['Brand'], median_prices_filtered['Price'],color=colours)
+for i, price in enumerate(median_prices_filtered['Price']):
+    plt.text(i,price+0.1,int(price),ha='center',va='bottom')
 plt.xlabel('Brand')
 plt.ylabel('Median price (SGD)')
 plt.title('Median price by Brand with >= 100 listings')

@@ -1,4 +1,5 @@
 import csv
+import time
 from datetime import datetime
 import tkinter as tk
 from tkinter import filedialog, messagebox
@@ -65,7 +66,6 @@ def read_cars_from_csv(file_path):
 
 # Load cars data from CSV
 cars = read_cars_from_csv('ProcessedData_.csv')
-#cars = read_cars_from_csv('Book1.csv')
 
 '''ALGORITHM'''
 #def calculate_score(car, budget_weight, mileage_weight, manufactured_year_weight,num_owners_weight, engine_capacity_weight, power_weight, curb_weight_weight):
@@ -157,9 +157,9 @@ for i, recommendation in enumerate(recommendations):
 def display_recommendations():
     global recommendations
     # Check if there are any recommendations
-    if not recommendations:
-        messagebox.showerror("No Recommendations", "No recommendations to display.")
-        return
+    #if not recommendations:
+        #messagebox.showerror("No Recommendations", "No recommendations to display.")
+        #return
 
     # Get user preferences from GUI inputs
     try:
@@ -205,8 +205,6 @@ def shorten_url_tiny(url):
 def display_results(recommendations):
     # Display recommendations in the results_text widget
     results_text.delete("1.0", tk.END)
-    #for i, recommendation in enumerate(recommendations):
-        #results_text.insert(tk.END, f"{i+1}. {recommendation[0]} {recommendation[1]} {recommendation[2]} (Score: {recommendation[3]:.2f})\n")
     for i, recommendation in enumerate(recommendations):
         shortened_url = shorten_url_tiny(recommendation[2])
         results_text.insert(tk.END,
