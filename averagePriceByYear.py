@@ -5,7 +5,7 @@ import csv
 import numpy as np
 
 # data source
-data = pd.read_csv(r"C:\Users\tohzh\PycharmProjects\INF1002-Web-Crawler-Project\ProcessedData.csv")
+data = pd.read_csv('ProcessedData_.csv')
 
 
 #data['Year'] = pd.to_datetime(data['Registration Date'])
