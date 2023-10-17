@@ -88,16 +88,19 @@ def new_window():
             filter_data(filtered_data)
 
         def save_to_csv():
-            save_path = filedialog.asksaveasfilename(defaultextension=".csv", filetypes=[("CSV Files", "*.csv")])
-            if save_path:
-                with open(save_path, 'w', newline='') as file:
-                    csv_writer = csv.writer(file)
-                    csv_writer.writerow(["Listing ID", "Listing URL", "Brand", "Price", "Depreciation", "Road Tax",
-                                         "Registration", "COE Left", "Mileage", "Manufacture Year", "Transmission",
-                                         "Deregistration", "OMV", "ARF", "COE Price", "Engine Capacity", "Power",
-                                         "Curb Weight", "No. Of Owners", "Vehicle Type"])
-                    filter_data(filtered_data)
-
+            if filtered_data is not None:
+                save_path = filedialog.asksaveasfilename(defaultextension=".csv", filetypes=[("CSV Files", "*.csv")])
+                if save_path:
+                    with open(save_path, 'w', newline='') as file:
+                        tree["columns"] = header
+                        csv_writer = csv.writer(file)
+                        csv_writer.writerow(header)
+                        filtered_data.to_csv(save_path,index=False)
+                        mb.showinfo("Info", "Data Saved Successfully")
+            else:
+                mb.showwarning("Warning", "No filtered data to save.")
+        save_button = tk.Button(new_win, text="Save Filtered Data", command=save_to_csv)
+        save_button.place(x=390, y=35)
 
     def filter_data(filtered_data):  # function to clear the treeview and replace with filtered data
         for item in tree.get_children():
@@ -149,6 +152,7 @@ def new_window():
     tree.place(x=150,y=100,width=1200,height=600)
     hscrollbar.place(x=150,y=700,width=1200)
 
+
     #  Enter unique values from columns in the csv to add into a dropdown list for user to choose
     unique_vehicle_brand = data['Brand'].unique()
     vehicle_brand = [vt.strip() for vt in unique_vehicle_brand if vt.strip() != '']
@@ -183,8 +187,7 @@ def new_window():
     #  button to display the filtered csv data
     filter_button = tk.Button(new_win, text="Filter", command=filtered_csv_view)
     filter_button.place(x=390,y=10)
-    # save_button = tk.Button(new_win, text="Save Filtered Data", command=save_to_csv)
-    # save_button.place(x=390, y=35)
+
 
     #  Text label to tell users what the ML is  for
     ML_label = tk.Label(new_win, text="Interested in a car? Let's check if the deal is worth it!")
