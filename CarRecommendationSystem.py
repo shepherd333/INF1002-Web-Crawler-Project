@@ -1,10 +1,15 @@
 import csv
 from datetime import datetime
 import tkinter as tk
-from tkinter import filedialog
+from tkinter import filedialog, messagebox
 import customtkinter
 import os
+
+import requests
 from PIL import Image,ImageTk
+from customtkinter import CTkFrame, CTkEntry
+import pyshorteners
+
 class Car:
     def __init__(self, Listing_ID, Listing_URL, Brand, Price, Depreciation, Road_Tax, Registration_Date, COE_Left, Mileage, Manufacture_Year,
                  Transmission,Deregistration, OMV, ARF, COE_Price, Engine_Capacity, Power, Curb_Weight, No_Of_Owners, Vehicle_Type):
@@ -61,12 +66,6 @@ def read_cars_from_csv(file_path):
 # Load cars data from CSV
 cars = read_cars_from_csv('ProcessedData_.csv')
 #cars = read_cars_from_csv('Book1.csv')
-
-
-
-
-
-
 
 '''ALGORITHM'''
 #def calculate_score(car, budget_weight, mileage_weight, manufactured_year_weight,num_owners_weight, engine_capacity_weight, power_weight, curb_weight_weight):
@@ -155,21 +154,33 @@ for i, recommendation in enumerate(recommendations):
 # display hyperlink for LISTING URL
 '''
 
-
-
-
-
-
 def display_recommendations():
     global recommendations
+    # Check if there are any recommendations
+    if not recommendations:
+        messagebox.showerror("No Recommendations", "No recommendations to display.")
+        return
+
     # Get user preferences from GUI inputs
-    max_budget = float(max_budget_entry.get())
-    max_mileage = float(max_mileage_entry.get())
-    max_year_difference = float(max_year_difference_entry.get())
-    max_num_owners = float(max_num_owners_entry.get())
-    max_engine_capacity = float(max_engine_capacity_entry.get())
-    max_power = float(max_power_entry.get())
-    max_curb_weight = float(max_curb_weight_entry.get())
+    try:
+        max_budget = float(max_budget_entry.get())
+        max_mileage = float(max_mileage_entry.get())
+        max_year_difference = float(max_year_difference_entry.get())
+        max_num_owners = float(max_num_owners_entry.get())
+        max_engine_capacity = float(max_engine_capacity_entry.get())
+        max_power = float(max_power_entry.get())
+        max_curb_weight = float(max_curb_weight_entry.get())
+    except ValueError:
+        messagebox.showerror("Invalid Input", "Please enter valid numerical values for preferences.")
+        return
+
+    # Check for negative values
+    if any(value < 0 for value in [max_budget, max_mileage, max_year_difference,
+                                   max_num_owners, max_engine_capacity,
+                                   max_power, max_curb_weight]):
+        results_text.delete("1.0", tk.END)
+        results_text.insert(tk.END, "Please enter non-negative values for preferences.")
+        return
 
     # Recommend cars based on buyer's preferences
     recommendations = recommend_cars(cars, max_budget, max_mileage, max_year_difference, max_num_owners,
@@ -178,11 +189,29 @@ def display_recommendations():
     # Display recommendations in the GUI
     display_results(recommendations)
 
+
+# Function to shorten a URL using TinyURL
+def shorten_url_tiny(url):
+    try:
+        s = pyshorteners.Shortener()
+        return s.tinyurl.short(url)
+    except requests.exceptions.ReadTimeout:
+        print("Error: Read timeout while shortening the URL. Please try again later.")
+        return url  # Return the original URL if shortening fails
+    except requests.exceptions.RequestException as e:
+        print(f"An error occurred while shortening the URL: {e}")
+        return url  # Return the original URL if shortening fails
+
 def display_results(recommendations):
     # Display recommendations in the results_text widget
     results_text.delete("1.0", tk.END)
+    #for i, recommendation in enumerate(recommendations):
+        #results_text.insert(tk.END, f"{i+1}. {recommendation[0]} {recommendation[1]} {recommendation[2]} (Score: {recommendation[3]:.2f})\n")
     for i, recommendation in enumerate(recommendations):
-        results_text.insert(tk.END, f"{i+1}. {recommendation[0]} {recommendation[1]} {recommendation[2]} (Score: {recommendation[3]:.2f})\n")
+        shortened_url = shorten_url_tiny(recommendation[2])
+        results_text.insert(tk.END,
+                            f"{i + 1}. {recommendation[0]} {recommendation[1]} {shortened_url} (Score: {recommendation[3]:.2f})\n")
+
 
 def save_to_csv(recommendations):
     # Save recommendations to a CSV file
@@ -190,80 +219,88 @@ def save_to_csv(recommendations):
     if file_path:
         with open(file_path, 'w', newline='') as csvfile:
             writer = csv.writer(csvfile)
+            writer.writerow(["Brand", "Listing ID", "Listing URL", "Shortened URL", "Score"])
+            for recommendation in recommendations:
+                shortened_url = shorten_url_tiny(recommendation[2])
+                writer.writerow(
+                    [recommendation[0], recommendation[1], recommendation[2], shortened_url, recommendation[3]])
+
+        '''
+        with open(file_path, 'w', newline='') as csvfile:
+            writer = csv.writer(csvfile)
             writer.writerow(["Brand", "Listing ID", "Listing URL", "Score"])
             for recommendation in recommendations:
                 writer.writerow([recommendation[0], recommendation[1], recommendation[2], recommendation[3]])
+'''
 
 # GUI display
-root = customtkinter.CTk()
-#root = tk.Tk()
+root = tk.Tk()
 root.title("Car Recommendation System")
-customtkinter.set_default_color_theme("blue")
-file_path=os.path.dirname(os.path.realpath(__file__))
-image1=customtkinter.CTkImage(Image.open(file_path+"/rThumbsUp.png"),size=(32,32))
 
+customtkinter.set_appearance_mode("light")
+customtkinter.set_default_color_theme("blue")
+
+file_path=os.path.dirname(os.path.realpath(__file__))
+image1=customtkinter.CTkImage(Image.open(file_path+"/rThumbsUp.png"),size=(28,28))
+image2=customtkinter.CTkImage(Image.open(file_path+"/rDownload.png"),size=(28,28))
 
 # user inputs
-customtkinter.CTkLabel(root, text="Buyer Preferences",width=120,font=("Roboto-Bold",int(24.8)),height=25,).pack(pady=10)
-#tk.Label(root, text="Buyer Preferences").pack(pady=10)
+frame = CTkFrame(root)
+frame.pack(expand=True)
 
-customtkinter.CTkLabel(root, font=("Arial-BoldMT",int(15)), text="Max Budget:").pack()
-max_budget_entry = tk.Entry(root)
-max_budget_entry.pack()
+buyer_preferences_label = customtkinter.CTkLabel(frame, text="Buyer Preferences", width=120, font=("Arial-BoldMT", 24.8), height=25)
+buyer_preferences_label.grid(row=0, column=0, columnspan=2, pady=(10,5), sticky="ew")
 
-tk.Label(root, text="Max Mileage:").pack()
-max_mileage_entry = tk.Entry(root)
-max_mileage_entry.pack()
+customtkinter.CTkLabel(frame, font=("Arial-BoldMT",15), text="Max Budget($): ").grid(row=1, column=0, padx=(15, 0), pady=10)
+max_budget_entry = CTkEntry(frame)
+max_budget_entry.grid(row=1,column=1,padx=(15, 0), pady=10)
 
-tk.Label(root, text="Max Year Difference:").pack()
-max_year_difference_entry = tk.Entry(root)
-max_year_difference_entry.pack()
+customtkinter.CTkLabel(frame, font=("Arial-BoldMT", 15), text="Max Mileage(km):").grid(row=2, column=0, padx=(15, 0), pady=10)
+max_mileage_entry = customtkinter.CTkEntry(frame)
+max_mileage_entry.grid(row=2, column=1, padx=(15, 0), pady=10)
 
-tk.Label(root, text="Max Number of Owners:").pack()
-max_num_owners_entry = tk.Entry(root)
-max_num_owners_entry.pack()
+customtkinter.CTkLabel(frame, font=("Arial-BoldMT",int(15)), text="Max Year(s) Difference:").grid(row=3, column=0, padx=(15, 0), pady=10)
+max_year_difference_entry = customtkinter.CTkEntry(frame)
+max_year_difference_entry.grid(row=3, column=1, padx=(15, 0), pady=10)
 
-tk.Label(root, text="Max Engine Capacity:").pack()
-max_engine_capacity_entry = tk.Entry(root)
-max_engine_capacity_entry.pack()
+customtkinter.CTkLabel(frame, font=("Arial-BoldMT",int(15)), text="Max Number of Owners:").grid(row=4, column=0, padx=(15, 0), pady=10)
+max_num_owners_entry = customtkinter.CTkEntry(frame)
+max_num_owners_entry.grid(row=4, column=1, padx=(15, 0), pady=10)
 
-tk.Label(root, text="Max Power:").pack()
-max_power_entry = tk.Entry(root)
-max_power_entry.pack()
+customtkinter.CTkLabel(frame, font=("Arial-BoldMT",int(15)), text="Max Engine Capacity(cc): ").grid(row=5, column=0, padx=(15, 0), pady=10)
+max_engine_capacity_entry = customtkinter.CTkEntry(frame)
+max_engine_capacity_entry.grid(row=5, column=1, padx=(15, 0), pady=10)
 
-tk.Label(root, text="Max Curb Weight:").pack()
-max_curb_weight_entry = tk.Entry(root)
-max_curb_weight_entry.pack()
+customtkinter.CTkLabel(frame, font=("Arial-BoldMT",int(15)), text="Max Power(kW):").grid(row=6, column=0, padx=(15, 0), pady=10)
+max_power_entry = customtkinter.CTkEntry(frame)
+max_power_entry.grid(row=6, column=1, padx=(15, 0), pady=10)
 
-
-
+customtkinter.CTkLabel(frame, font=("Arial-BoldMT",int(15)), text="Max Curb Weight(kg) :").grid(row=7, column=0, padx=(15, 0), pady=10)
+max_curb_weight_entry = customtkinter.CTkEntry(frame)
+max_curb_weight_entry.grid(row=7, column=1, padx=(15, 0), pady=10)
 
 
 # Btn to show top 10 recommendations
-recommend_button = customtkinter.CTkButton(root, text="Recommend Me!", image=image1, compound="right", command=display_recommendations)
-#recommend_button = tk.Button(root, text="Recommend", command=display_recommendations)
-recommend_button.pack(pady=10)
-# Text widget to display recommendations
-results_text = tk.Text(root, width=80, height=15, state="normal")
-results_text.pack(pady=10)
-# Btn to save recommendations to a CSV file
-save_button = customtkinter.CTkButton(root, text="Download", command=lambda: save_to_csv(recommendations))
-#save_button = tk.Button(root, text="Save to CSV", command=lambda: save_to_csv(recommendations))
-save_button.pack(pady=10)
+recommend_button = customtkinter.CTkButton(frame, text="Recommend!", image=image1, compound="right", command=display_recommendations)
+recommend_button.grid(row=8, column=0, columnspan=2, pady=10)
+
+results_text = tk.Text(frame, width=80, height=15, state="normal")
+results_text.grid(row=9, column=0, columnspan=2, pady=10)
+
+save_button = customtkinter.CTkButton(frame, text="Download", image=image2, compound="right", command=lambda: save_to_csv(recommendations))
+save_button.grid(row=10, column=0, columnspan=2, pady=10)
+
+''''''
+frame.grid_columnconfigure(0, weight=1)
+frame.grid_columnconfigure(1, weight=1)
+
+root.update_idletasks()  # Update the idle tasks to calculate the frame size
+frame_width = frame.winfo_reqwidth()
+frame_height = frame.winfo_reqheight()
+screen_width = root.winfo_screenwidth()
+screen_height = root.winfo_screenheight()
+x_coordinate = (screen_width - frame_width) // 2
+y_coordinate = (screen_height - frame_height) // 2
+root.geometry(f"{frame_width}x{frame_height}+{x_coordinate}+{y_coordinate}")
 
 root.mainloop()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
