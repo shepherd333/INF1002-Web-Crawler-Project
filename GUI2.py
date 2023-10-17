@@ -3,7 +3,11 @@ from tkinter import filedialog
 import tkinter as tk
 import tkinter.messagebox as mb
 from tkinter import ttk
+from tkinter import filedialog, messagebox
+import customtkinter
 from PIL import ImageTk, Image
+from customtkinter import CTkFrame, CTkEntry
+import pyshorteners
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -119,11 +123,11 @@ def new_window():
         user_input_price = float(price_entry.get())
 
         if predicted_price < user_input_price:
-            feedback_label.config(text="Predicted price is lower than the input price.")
+            feedback_label.config(text="Your car details suggest that the car is overvalued.")
         elif predicted_price == user_input_price:
-            feedback_label.config(text="Predicted price is the same as the input price.")
+            feedback_label.config(text="Your car details suggest that the car is fair-valued.")
         else:
-            feedback_label.config(text="Predicted price is higher than the input price.")
+            feedback_label.config(text="Your car details suggest that the car is undervalued.")
 
     open_button = tk.Button(new_win, text="View All Data", command=csv_view)  # button to view full csv data
     open_button.pack(pady=10)
@@ -249,6 +253,9 @@ def medianprice():
     os.system('medianPrice.py')
 
 
+def car_recommendation():
+    os.system('CarRecommendationSystem.py')
+
 
 # Placing components in the main frame
 toplabel=tk.Label(main, text="ONLINE USED CARS MARKETPLACE DATA AND ANALYSIS", font=headlabelfont, bg='AQUA').pack(side=TOP, fill=X)
@@ -272,7 +279,8 @@ b8= tk.Button(main,text='Number of Vehicles Registered by Year', font=labelfont,
 b8.pack(padx=5,pady=10)
 b9= tk.Button(main,text='Median Price by Brands', font=labelfont,bg='white', command=medianprice, width=30)
 b9.pack(padx=5,pady=10)
-
+b9= tk.Button(main,text='Car Recommendation System', font=labelfont,bg='white', command=car_recommendation, width=30)
+b9.pack(padx=5,pady=10)
 # Running the GUI window
 main.mainloop()
 
