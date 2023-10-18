@@ -239,11 +239,7 @@ predict = xgr.predict(test_x)
 #print('MAE', mean_absolute_error(predict, test_y))
 #print('R2', r2_score(predict, test_y))
 
-# from ProcessedData.csv (old)
-# MAE 4373.667899687914
-# R2 0.9871182583379438
-
-#from ProcessedData_.csv (updated)
+#from ProcessedData_.csv
 #MAE 8240.562093914996
 #R2 0.9313314594769386
 
